@@ -73,6 +73,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Altas.add(jMenu_Cliente_demo);
 
         jMenu_cliente_demografico.setText("Cliente demografico");
+        jMenu_cliente_demografico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_cliente_demograficoActionPerformed(evt);
+            }
+        });
         jMenu_Altas.add(jMenu_cliente_demografico);
 
         jMenuBar1.add(jMenu_Altas);
@@ -98,6 +103,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenu_Cliente_demoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cliente_demoActionPerformed
         new Cliente_demo_Altas().setVisible(true);
     }//GEN-LAST:event_jMenu_Cliente_demoActionPerformed
+
+    private void jMenu_cliente_demograficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_cliente_demograficoActionPerformed
+        new Cliente_demo_Altas().setVisible(true);
+    }//GEN-LAST:event_jMenu_cliente_demograficoActionPerformed
 
     /**
      * @param args the command line arguments

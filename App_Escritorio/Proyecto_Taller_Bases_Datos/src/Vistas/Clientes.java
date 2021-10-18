@@ -74,6 +74,12 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 21, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
+
+        caja_nombre_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_nombre_contactoKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 5;
@@ -338,6 +344,11 @@ public class Clientes extends javax.swing.JFrame {
         getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
+        btn_salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_salirActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 13;
         gridBagConstraints.gridy = 21;
@@ -372,6 +383,17 @@ public class Clientes extends javax.swing.JFrame {
     private void caja_faxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_faxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_caja_faxActionPerformed
+
+    private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void caja_nombre_contactoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_nombre_contactoKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_nombre_contactoKeyTyped
 
     /**
      * @param args the command line arguments
