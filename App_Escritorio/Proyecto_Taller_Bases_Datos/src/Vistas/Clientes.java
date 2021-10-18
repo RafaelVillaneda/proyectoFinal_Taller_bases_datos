@@ -50,7 +50,9 @@ public class Clientes extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         caja_fax = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btn_Agregar = new javax.swing.JButton();
+        btn_Limpiar = new javax.swing.JButton();
+        btn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -60,87 +62,87 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 50, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 42, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel2.setText("Nombre de la compañia:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 21, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_nombre_contacto, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel3.setText("Nombre de contacto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 23, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_Nombre_compañia1, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_titulo_contacto, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel4.setText("Titulo de contacto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 20, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 23, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel5.setText("Dirección: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(14, 23, 0, 0);
         getContentPane().add(jLabel5, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(2, 28, 0, 0);
         getContentPane().add(caja_direccion, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -150,26 +152,27 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(31, 21, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(26, 28, 0, 0);
         getContentPane().add(caja_id, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel7.setText("Ciudad: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 23, 0, 0);
         getContentPane().add(jLabel7, gridBagConstraints);
 
         caja_ciudad.addActionListener(new java.awt.event.ActionListener() {
@@ -179,23 +182,24 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_ciudad, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel8.setText("Region: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 23, 0, 0);
         getContentPane().add(jLabel8, gridBagConstraints);
 
         caja_region.addActionListener(new java.awt.event.ActionListener() {
@@ -205,23 +209,23 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 14;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridheight = 7;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 28, 0, 0);
         getContentPane().add(caja_region, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel9.setText("Codigo postal: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 21;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 23, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
 
         caja_codigo_postal.addActionListener(new java.awt.event.ActionListener() {
@@ -231,13 +235,13 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 21;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_codigo_postal, gridBagConstraints);
 
         caja_pais.addActionListener(new java.awt.event.ActionListener() {
@@ -247,23 +251,23 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridy = 23;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 28, 0, 0);
         getContentPane().add(caja_pais, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel10.setText("Pais: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridy = 23;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 23, 0, 0);
         getContentPane().add(jLabel10, gridBagConstraints);
 
         caja_telefono.addActionListener(new java.awt.event.ActionListener() {
@@ -273,23 +277,22 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridy = 25;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(9, 28, 0, 0);
         getContentPane().add(caja_telefono, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel11.setText("Telefono: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridy = 25;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 24, 0, 0);
         getContentPane().add(jLabel11, gridBagConstraints);
 
         caja_fax.addActionListener(new java.awt.event.ActionListener() {
@@ -299,32 +302,49 @@ public class Clientes extends javax.swing.JFrame {
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
-        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridy = 26;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 36, 57, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 68, 0);
         getContentPane().add(caja_fax, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel12.setText("Fax: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridy = 26;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(25, 24, 68, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 13;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridheight = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(26, 40, 0, 150);
-        getContentPane().add(jButton1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(20, 99, 0, 152);
+        getContentPane().add(btn_Agregar, gridBagConstraints);
+
+        btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(28, 99, 0, 152);
+        getContentPane().add(btn_Limpiar, gridBagConstraints);
+
+        btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 21;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 99, 0, 152);
+        getContentPane().add(btn_salir, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -389,6 +409,9 @@ public class Clientes extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Agregar;
+    private javax.swing.JButton btn_Limpiar;
+    private javax.swing.JButton btn_salir;
     private javax.swing.JTextField caja_Nombre_compañia1;
     private javax.swing.JTextField caja_ciudad;
     private javax.swing.JTextField caja_codigo_postal;
@@ -400,7 +423,6 @@ public class Clientes extends javax.swing.JFrame {
     private javax.swing.JTextField caja_region;
     private javax.swing.JTextField caja_telefono;
     private javax.swing.JTextField caja_titulo_contacto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -25,38 +25,79 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jLabel1 = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu_Altas = new javax.swing.JMenu();
+        jMenu_altasClientes = new javax.swing.JMenuItem();
+        jMenu_Cliente_demo = new javax.swing.JMenuItem();
+        jMenu_cliente_demografico = new javax.swing.JMenuItem();
+        jMenu_Bajas = new javax.swing.JMenu();
+        jMenu_Cambios = new javax.swing.JMenu();
+        jMenu1 = new javax.swing.JMenu();
+
+        jMenuItem1.setText("jMenuItem1");
+
+        jMenu3.setText("jMenu3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jMenu1.setText("Altas");
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/fondo.jpg"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 11, 10);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
-        jMenuItem1.setText("jMenuItem1");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_Altas.setText("Altas");
+
+        jMenu_altasClientes.setText("Altas Clientes");
+        jMenu_altasClientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMenu_altasClientesActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        jMenu_Altas.add(jMenu_altasClientes);
 
+        jMenu_Cliente_demo.setText("Cliente Demo");
+        jMenu_Cliente_demo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_Cliente_demoActionPerformed(evt);
+            }
+        });
+        jMenu_Altas.add(jMenu_Cliente_demo);
+
+        jMenu_cliente_demografico.setText("Cliente demografico");
+        jMenu_Altas.add(jMenu_cliente_demografico);
+
+        jMenuBar1.add(jMenu_Altas);
+
+        jMenu_Bajas.setText("Bajas");
+        jMenuBar1.add(jMenu_Bajas);
+
+        jMenu_Cambios.setText("Cambios");
+        jMenuBar1.add(jMenu_Cambios);
+
+        jMenu1.setText("Consultas");
         jMenuBar1.add(jMenu1);
-
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMenu_altasClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_altasClientesActionPerformed
         new Clientes().setVisible(true);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMenu_altasClientesActionPerformed
+
+    private void jMenu_Cliente_demoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cliente_demoActionPerformed
+        new Cliente_demo_Altas().setVisible(true);
+    }//GEN-LAST:event_jMenu_Cliente_demoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -94,10 +135,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenu jMenu_Altas;
+    private javax.swing.JMenu jMenu_Bajas;
+    private javax.swing.JMenu jMenu_Cambios;
+    private javax.swing.JMenuItem jMenu_Cliente_demo;
+    private javax.swing.JMenuItem jMenu_altasClientes;
+    private javax.swing.JMenuItem jMenu_cliente_demografico;
     // End of variables declaration//GEN-END:variables
 
 }
