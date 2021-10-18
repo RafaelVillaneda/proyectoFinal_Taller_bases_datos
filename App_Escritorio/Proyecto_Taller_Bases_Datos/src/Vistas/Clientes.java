@@ -5,7 +5,7 @@
  */
 
 package Vistas;
-
+import java.awt.Component;
 /**
  *
  * @author Rafael Villaneda
@@ -55,6 +55,7 @@ public class Clientes extends javax.swing.JFrame {
         btn_salir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Altas Clientes");
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/user.png"))); // NOI18N
@@ -140,6 +141,12 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(14, 23, 0, 0);
         getContentPane().add(jLabel5, gridBagConstraints);
+
+        caja_direccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_direccionKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 10;
@@ -186,6 +193,11 @@ public class Clientes extends javax.swing.JFrame {
                 caja_ciudadActionPerformed(evt);
             }
         });
+        caja_ciudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_ciudadKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 12;
@@ -211,6 +223,11 @@ public class Clientes extends javax.swing.JFrame {
         caja_region.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_regionActionPerformed(evt);
+            }
+        });
+        caja_region.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_regionKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -239,6 +256,11 @@ public class Clientes extends javax.swing.JFrame {
                 caja_codigo_postalActionPerformed(evt);
             }
         });
+        caja_codigo_postal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_codigo_postalKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 21;
@@ -253,6 +275,11 @@ public class Clientes extends javax.swing.JFrame {
         caja_pais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_paisActionPerformed(evt);
+            }
+        });
+        caja_pais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_paisKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -281,6 +308,11 @@ public class Clientes extends javax.swing.JFrame {
                 caja_telefonoActionPerformed(evt);
             }
         });
+        caja_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_telefonoKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 25;
@@ -304,6 +336,11 @@ public class Clientes extends javax.swing.JFrame {
         caja_fax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_faxActionPerformed(evt);
+            }
+        });
+        caja_fax.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_faxKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -335,6 +372,11 @@ public class Clientes extends javax.swing.JFrame {
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
+        btn_Limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_LimpiarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 13;
         gridBagConstraints.gridy = 10;
@@ -394,6 +436,69 @@ public class Clientes extends javax.swing.JFrame {
 	evt.consume();
         }
     }//GEN-LAST:event_caja_nombre_contactoKeyTyped
+
+    private void caja_direccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_direccionKeyTyped
+       char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_direccionKeyTyped
+
+    private void caja_ciudadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_ciudadKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car) || car=='.'){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_ciudadKeyTyped
+
+    private void caja_regionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_regionKeyTyped
+       char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_regionKeyTyped
+
+    private void caja_codigo_postalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_codigo_postalKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_codigo_postalKeyTyped
+
+    private void caja_paisKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_paisKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_paisKeyTyped
+
+    private void caja_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_telefonoKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isDigit(car) || car=='-' || car=='(' || car==')'){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_telefonoKeyTyped
+
+    private void caja_faxKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_faxKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isDigit(car) || car=='-' || car=='(' || car==')'){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_faxKeyTyped
+
+    private void btn_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimpiarActionPerformed
+        caja_id.setText("");
+        caja_Nombre_compañia1.setText("");
+        caja_nombre_contacto.setText("");
+        caja_titulo_contacto.setText("");
+        caja_direccion.setText("");
+        caja_ciudad.setText("");
+        caja_region.setText("");
+        caja_codigo_postal.setText("");
+        caja_pais.setText("");
+        caja_telefono.setText("");
+        caja_fax.setText("");
+    }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     /**
      * @param args the command line arguments
