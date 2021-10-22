@@ -10,10 +10,10 @@ package Vistas;
  *
  * @author Rafael Villaneda
  */
-public class Cambios_clientes extends javax.swing.JFrame {
+public class Bajas_clientes extends javax.swing.JFrame {
 
-    /** Creates new form Cambios_clientes */
-    public Cambios_clientes() {
+    /** Creates new form Bajas_clientes */
+    public Bajas_clientes() {
         initComponents();
     }
 
@@ -27,7 +27,6 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         caja_nombre_contacto = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
@@ -50,23 +49,14 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         caja_fax = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
-        btn_rescribir = new javax.swing.JButton();
+        btn_eliminar_registro = new javax.swing.JButton();
         btn_Limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_buscar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Cambios Clientes");
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Modificar_Usuario.png"))); // NOI18N
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel2.setText("Nombre de la compañia:");
@@ -75,7 +65,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 0, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
         caja_nombre_contacto.setEnabled(false);
@@ -102,7 +92,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 9;
         gridBagConstraints.gridwidth = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(1, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 2, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
 
         caja_Nombre_compañia1.setEnabled(false);
@@ -136,7 +126,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(32, 2, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -146,7 +136,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 14;
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 2, 0, 0);
         getContentPane().add(jLabel5, gridBagConstraints);
 
         caja_direccion.setEnabled(false);
@@ -173,7 +163,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 0, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
@@ -193,7 +183,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 16;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 0, 0);
         getContentPane().add(jLabel7, gridBagConstraints);
 
         caja_ciudad.setEnabled(false);
@@ -225,7 +215,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 18;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 2, 0, 0);
         getContentPane().add(jLabel8, gridBagConstraints);
 
         caja_region.setEnabled(false);
@@ -257,7 +247,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 21;
         gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
 
         caja_codigo_postal.setEnabled(false);
@@ -310,7 +300,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 23;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 0, 0, 0);
         getContentPane().add(jLabel10, gridBagConstraints);
 
         caja_telefono.setEnabled(false);
@@ -340,7 +330,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 25;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 11, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 1, 0, 0);
         getContentPane().add(jLabel11, gridBagConstraints);
 
         caja_fax.setEnabled(false);
@@ -360,7 +350,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 79, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
         getContentPane().add(caja_fax, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -369,18 +359,20 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 27;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 11, 79, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 1, 0, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
-        btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
+        btn_eliminar_registro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 5;
+        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.ipady = 17;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(24, 8, 0, 96);
-        getContentPane().add(btn_rescribir, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(24, 8, 0, 0);
+        getContentPane().add(btn_eliminar_registro, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
         btn_Limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -394,7 +386,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 8, 0, 96);
+        gridBagConstraints.insets = new java.awt.Insets(22, 8, 0, 0);
         getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -411,15 +403,23 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
+        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 8, 0, 96);
-        getContentPane().add(jButton1, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(27, 8, 0, 0);
+        getContentPane().add(btn_buscar, gridBagConstraints);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Modificar_Usuario.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -539,27 +539,28 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Cambios_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bajas_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Cambios_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bajas_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Cambios_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bajas_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Cambios_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Bajas_clientes.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Cambios_clientes().setVisible(true);
+                new Bajas_clientes().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Limpiar;
-    private javax.swing.JButton btn_rescribir;
+    private javax.swing.JButton btn_buscar;
+    private javax.swing.JButton btn_eliminar_registro;
     private javax.swing.JButton btn_salir;
     private javax.swing.JTextField caja_Nombre_compañia1;
     private javax.swing.JTextField caja_ciudad;
@@ -572,7 +573,6 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private javax.swing.JTextField caja_region;
     private javax.swing.JTextField caja_telefono;
     private javax.swing.JTextField caja_titulo_contacto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

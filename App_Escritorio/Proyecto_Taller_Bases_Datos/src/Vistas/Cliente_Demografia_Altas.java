@@ -85,7 +85,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 18, 0, 0);
         getContentPane().add(caja_id_demografia1, gridBagConstraints);
 
-        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -93,7 +93,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(32, 10, 0, 0);
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
-        btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
+        btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
         btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_limpiarActionPerformed(evt);

@@ -36,8 +36,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Cliente_demo = new javax.swing.JMenuItem();
         jMenu_cliente_demografico = new javax.swing.JMenuItem();
         jMenu_Bajas = new javax.swing.JMenu();
+        jMenu_eliminarcliente = new javax.swing.JMenuItem();
+        jMenu_eliminar_cliente_demo = new javax.swing.JMenuItem();
+        jMenu_eliminar_clientes_demograficos = new javax.swing.JMenuItem();
         jMenu_Cambios = new javax.swing.JMenu();
         jMenu_Cambios_Clientes = new javax.swing.JMenuItem();
+        jMenu_cambios_clientes_demo = new javax.swing.JMenuItem();
+        jMenu_Cambios_clientes_demograficos = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -84,6 +89,21 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu_Altas);
 
         jMenu_Bajas.setText("Bajas");
+
+        jMenu_eliminarcliente.setText("Eliminar Cliente");
+        jMenu_eliminarcliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_eliminarclienteActionPerformed(evt);
+            }
+        });
+        jMenu_Bajas.add(jMenu_eliminarcliente);
+
+        jMenu_eliminar_cliente_demo.setText("Eliminar cliente demo");
+        jMenu_Bajas.add(jMenu_eliminar_cliente_demo);
+
+        jMenu_eliminar_clientes_demograficos.setText("jMenuItem2");
+        jMenu_Bajas.add(jMenu_eliminar_clientes_demograficos);
+
         jMenuBar1.add(jMenu_Bajas);
 
         jMenu_Cambios.setText("Cambios");
@@ -95,6 +115,22 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenu_Cambios.add(jMenu_Cambios_Clientes);
+
+        jMenu_cambios_clientes_demo.setText("Cambios clientes demo");
+        jMenu_cambios_clientes_demo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_cambios_clientes_demoActionPerformed(evt);
+            }
+        });
+        jMenu_Cambios.add(jMenu_cambios_clientes_demo);
+
+        jMenu_Cambios_clientes_demograficos.setText("Cambios clientes demograficos");
+        jMenu_Cambios_clientes_demograficos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_Cambios_clientes_demograficosActionPerformed(evt);
+            }
+        });
+        jMenu_Cambios.add(jMenu_Cambios_clientes_demograficos);
 
         jMenuBar1.add(jMenu_Cambios);
 
@@ -121,6 +157,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenu_Cambios_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cambios_ClientesActionPerformed
         new Cambios_clientes().setVisible(true);
     }//GEN-LAST:event_jMenu_Cambios_ClientesActionPerformed
+
+    private void jMenu_cambios_clientes_demoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_cambios_clientes_demoActionPerformed
+        new Cambios_cliente_demo().setVisible(true);
+    }//GEN-LAST:event_jMenu_cambios_clientes_demoActionPerformed
+
+    private void jMenu_Cambios_clientes_demograficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cambios_clientes_demograficosActionPerformed
+       new Cambios_clientes_Demograficos().setVisible(true);
+    }//GEN-LAST:event_jMenu_Cambios_clientes_demograficosActionPerformed
+
+    private void jMenu_eliminarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_eliminarclienteActionPerformed
+        new Bajas_clientes().setVisible(true);
+    }//GEN-LAST:event_jMenu_eliminarclienteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,9 +215,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_Bajas;
     private javax.swing.JMenu jMenu_Cambios;
     private javax.swing.JMenuItem jMenu_Cambios_Clientes;
+    private javax.swing.JMenuItem jMenu_Cambios_clientes_demograficos;
     private javax.swing.JMenuItem jMenu_Cliente_demo;
     private javax.swing.JMenuItem jMenu_altasClientes;
+    private javax.swing.JMenuItem jMenu_cambios_clientes_demo;
     private javax.swing.JMenuItem jMenu_cliente_demografico;
+    private javax.swing.JMenuItem jMenu_eliminar_cliente_demo;
+    private javax.swing.JMenuItem jMenu_eliminar_clientes_demograficos;
+    private javax.swing.JMenuItem jMenu_eliminarcliente;
     // End of variables declaration//GEN-END:variables
 
 }
