@@ -49,42 +49,43 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 4;
         gridBagConstraints.ipady = -30;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 0, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 11)); // NOI18N
         jLabel2.setText("Indentificador del cliente: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 6, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 11)); // NOI18N
         jLabel3.setText("Indentificador de la demografia de clientes");
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(35, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(35, 6, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 13;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 112;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(25, 17, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(52, 17, 0, 0);
         getContentPane().add(caja_Id_Cliente, gridBagConstraints);
 
         caja_Id_demografia.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 7;
+        gridBagConstraints.gridx = 22;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.gridwidth = 15;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 112;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -95,8 +96,9 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.ipadx = -24;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 23, 33, 0);
+        gridBagConstraints.insets = new java.awt.Insets(42, 0, 21, 0);
         getContentPane().add(btn_agregar, gridBagConstraints);
 
         btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
@@ -106,11 +108,11 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 5, 33, 0);
+        gridBagConstraints.insets = new java.awt.Insets(42, 18, 21, 0);
         getContentPane().add(btn_limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -120,19 +122,20 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 10;
+        gridBagConstraints.gridx = 22;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridwidth = 14;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 18, 33, 10);
+        gridBagConstraints.insets = new java.awt.Insets(42, 5, 21, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
         btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 29, 33, 0);
+        gridBagConstraints.insets = new java.awt.Insets(42, 37, 21, 0);
         getContentPane().add(btn_buscar, gridBagConstraints);
 
         pack();

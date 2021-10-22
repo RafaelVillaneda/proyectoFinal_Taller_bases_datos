@@ -99,9 +99,19 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Bajas.add(jMenu_eliminarcliente);
 
         jMenu_eliminar_cliente_demo.setText("Eliminar cliente demo");
+        jMenu_eliminar_cliente_demo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_eliminar_cliente_demoActionPerformed(evt);
+            }
+        });
         jMenu_Bajas.add(jMenu_eliminar_cliente_demo);
 
-        jMenu_eliminar_clientes_demograficos.setText("jMenuItem2");
+        jMenu_eliminar_clientes_demograficos.setText("Eliminar Demografias de clientes");
+        jMenu_eliminar_clientes_demograficos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_eliminar_clientes_demograficosActionPerformed(evt);
+            }
+        });
         jMenu_Bajas.add(jMenu_eliminar_clientes_demograficos);
 
         jMenuBar1.add(jMenu_Bajas);
@@ -169,6 +179,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private void jMenu_eliminarclienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_eliminarclienteActionPerformed
         new Bajas_clientes().setVisible(true);
     }//GEN-LAST:event_jMenu_eliminarclienteActionPerformed
+
+    private void jMenu_eliminar_cliente_demoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_eliminar_cliente_demoActionPerformed
+        new Bajas_clientes_demo().setVisible(true);
+    }//GEN-LAST:event_jMenu_eliminar_cliente_demoActionPerformed
+
+    private void jMenu_eliminar_clientes_demograficosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_eliminar_clientes_demograficosActionPerformed
+       new Bajas_demografias().setVisible(true);
+    }//GEN-LAST:event_jMenu_eliminar_clientes_demograficosActionPerformed
 
     /**
      * @param args the command line arguments
