@@ -94,6 +94,11 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
         btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
+        btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_limpiarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
@@ -121,6 +126,11 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
     private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_btn_SalirActionPerformed
+
+    private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
+        caja_id_demografia1.setText("");
+        caja_id_desc.setText("");
+    }//GEN-LAST:event_btn_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
