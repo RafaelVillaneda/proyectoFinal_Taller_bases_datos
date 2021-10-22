@@ -37,7 +37,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_cliente_demografico = new javax.swing.JMenuItem();
         jMenu_Bajas = new javax.swing.JMenu();
         jMenu_Cambios = new javax.swing.JMenu();
-        MenuCambiosClientes = new javax.swing.JMenu();
+        jMenu_Cambios_Clientes = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
 
         jMenuItem1.setText("jMenuItem1");
@@ -88,14 +88,13 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenu_Cambios.setText("Cambios");
 
-        MenuCambiosClientes.setText("Cambios clientes");
-        MenuCambiosClientes.setToolTipText("");
-        MenuCambiosClientes.addActionListener(new java.awt.event.ActionListener() {
+        jMenu_Cambios_Clientes.setText("Cambios Clientes");
+        jMenu_Cambios_Clientes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MenuCambiosClientesActionPerformed(evt);
+                jMenu_Cambios_ClientesActionPerformed(evt);
             }
         });
-        jMenu_Cambios.add(MenuCambiosClientes);
+        jMenu_Cambios.add(jMenu_Cambios_Clientes);
 
         jMenuBar1.add(jMenu_Cambios);
 
@@ -119,9 +118,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         new Cliente_demo_Altas().setVisible(true);
     }//GEN-LAST:event_jMenu_cliente_demograficoActionPerformed
 
-    private void MenuCambiosClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuCambiosClientesActionPerformed
-         new Cambios_clientes().setVisible(true);
-    }//GEN-LAST:event_MenuCambiosClientesActionPerformed
+    private void jMenu_Cambios_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cambios_ClientesActionPerformed
+        new Cambios_clientes().setVisible(true);
+    }//GEN-LAST:event_jMenu_Cambios_ClientesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -159,7 +158,6 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu MenuCambiosClientes;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
@@ -168,6 +166,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu_Altas;
     private javax.swing.JMenu jMenu_Bajas;
     private javax.swing.JMenu jMenu_Cambios;
+    private javax.swing.JMenuItem jMenu_Cambios_Clientes;
     private javax.swing.JMenuItem jMenu_Cliente_demo;
     private javax.swing.JMenuItem jMenu_altasClientes;
     private javax.swing.JMenuItem jMenu_cliente_demografico;

@@ -25,6 +25,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -52,41 +53,147 @@ public class Cambios_clientes extends javax.swing.JFrame {
         btn_rescribir = new javax.swing.JButton();
         btn_Limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cambios Clientes");
+        getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Modificar_Usuario.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.ipadx = 83;
+        gridBagConstraints.ipady = 48;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 61, 0, 0);
+        getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel2.setText("Nombre de la compañia:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(19, 0, 0, 0);
+        getContentPane().add(jLabel2, gridBagConstraints);
 
+        caja_nombre_contacto.setEnabled(false);
         caja_nombre_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_nombre_contactoKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
+        getContentPane().add(caja_nombre_contacto, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel3.setText("Nombre de contacto:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 9;
+        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(1, 2, 0, 0);
+        getContentPane().add(jLabel3, gridBagConstraints);
+
+        caja_Nombre_compañia1.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 28, 0, 0);
+        getContentPane().add(caja_Nombre_compañia1, gridBagConstraints);
+
+        caja_titulo_contacto.setEnabled(false);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 28, 0, 0);
+        getContentPane().add(caja_titulo_contacto, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel4.setText("Titulo de contacto:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(32, 2, 0, 0);
+        getContentPane().add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel5.setText("Dirección: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 2, 0, 0);
+        getContentPane().add(jLabel5, gridBagConstraints);
 
+        caja_direccion.setEnabled(false);
         caja_direccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_direccionKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 28, 0, 0);
+        getContentPane().add(caja_direccion, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel6.setText("Indentificador");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(41, 0, 0, 0);
+        getContentPane().add(jLabel6, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(36, 28, 0, 0);
+        getContentPane().add(caja_id, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel7.setText("Ciudad: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 0, 0);
+        getContentPane().add(jLabel7, gridBagConstraints);
 
+        caja_ciudad.setEnabled(false);
         caja_ciudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_ciudadActionPerformed(evt);
@@ -97,10 +204,27 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_ciudadKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
+        getContentPane().add(caja_ciudad, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel8.setText("Region: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 2, 0, 0);
+        getContentPane().add(jLabel8, gridBagConstraints);
 
+        caja_region.setEnabled(false);
         caja_region.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_regionActionPerformed(evt);
@@ -111,10 +235,27 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_regionKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 28, 0, 0);
+        getContentPane().add(caja_region, gridBagConstraints);
 
         jLabel9.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel9.setText("Codigo postal: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 21;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 0, 0);
+        getContentPane().add(jLabel9, gridBagConstraints);
 
+        caja_codigo_postal.setEnabled(false);
         caja_codigo_postal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_codigo_postalActionPerformed(evt);
@@ -125,7 +266,17 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_codigo_postalKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 21;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
+        getContentPane().add(caja_codigo_postal, gridBagConstraints);
 
+        caja_pais.setEnabled(false);
         caja_pais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_paisActionPerformed(evt);
@@ -136,10 +287,27 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_paisKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 23;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(18, 28, 0, 0);
+        getContentPane().add(caja_pais, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel10.setText("Pais: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 23;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(23, 2, 0, 0);
+        getContentPane().add(jLabel10, gridBagConstraints);
 
+        caja_telefono.setEnabled(false);
         caja_telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_telefonoActionPerformed(evt);
@@ -150,10 +318,26 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_telefonoKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 25;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(9, 28, 0, 0);
+        getContentPane().add(caja_telefono, gridBagConstraints);
 
         jLabel11.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel11.setText("Telefono: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 25;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(23, 3, 0, 0);
+        getContentPane().add(jLabel11, gridBagConstraints);
 
+        caja_fax.setEnabled(false);
         caja_fax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_faxActionPerformed(evt);
@@ -164,11 +348,32 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 caja_faxKeyTyped(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 27;
+        gridBagConstraints.ipadx = 150;
+        gridBagConstraints.ipady = 11;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(6, 28, 0, 0);
+        getContentPane().add(caja_fax, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel12.setText("Fax: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 27;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 3, 0, 0);
+        getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(54, 8, 0, 32);
+        getContentPane().add(btn_rescribir, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
         btn_Limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +381,13 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 btn_LimpiarActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(22, 8, 0, 32);
+        getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
         btn_salir.addActionListener(new java.awt.event.ActionListener() {
@@ -183,148 +395,22 @@ public class Cambios_clientes extends javax.swing.JFrame {
                 btn_salirActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 23;
+        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(21, 8, 0, 32);
+        getContentPane().add(btn_salir, gridBagConstraints);
 
-        org.jdesktop.layout.GroupLayout layout = new org.jdesktop.layout.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(jLabel6)
-                        .add(98, 98, 98)
-                        .add(caja_id, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
-                        .add(jLabel2)
-                        .add(28, 28, 28)
-                        .add(caja_Nombre_compañia1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                    .add(layout.createSequentialGroup()
-                        .add(3, 3, 3)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel11)
-                                .add(123, 123, 123)
-                                .add(caja_telefono, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                            .add(layout.createSequentialGroup()
-                                .add(jLabel12)
-                                .add(158, 158, 158)
-                                .add(caja_fax, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .add(layout.createSequentialGroup()
-                .add(2, 2, 2)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel3)
-                            .add(jLabel4))
-                        .add(49, 49, 49)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(caja_nombre_contacto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(caja_titulo_contacto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel5)
-                            .add(jLabel7)
-                            .add(jLabel8))
-                        .add(118, 118, 118)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(caja_direccion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(caja_ciudad, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(caja_region, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(jLabel9)
-                            .add(jLabel10))
-                        .add(88, 88, 88)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(caja_codigo_postal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                            .add(caja_pais, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 157, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                .addPreferredGap(org.jdesktop.layout.LayoutStyle.RELATED, 31, Short.MAX_VALUE)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(btn_rescribir)
-                    .add(btn_Limpiar)
-                    .add(btn_salir))
-                .add(32, 32, 32))
-            .add(org.jdesktop.layout.GroupLayout.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(org.jdesktop.layout.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 147, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(137, 137, 137))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-            .add(layout.createSequentialGroup()
-                .addContainerGap()
-                .add(jLabel1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 112, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                .add(36, 36, 36)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(5, 5, 5)
-                        .add(jLabel6))
-                    .add(caja_id, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(11, 11, 11)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(5, 5, 5)
-                        .add(jLabel2))
-                    .add(caja_Nombre_compañia1, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(11, 11, 11)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(5, 5, 5)
-                                .add(jLabel3)
-                                .add(25, 25, 25)
-                                .add(jLabel4))
-                            .add(layout.createSequentialGroup()
-                                .add(caja_nombre_contacto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(11, 11, 11)
-                                .add(caja_titulo_contacto, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(11, 11, 11)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(12, 12, 12)
-                                .add(jLabel5)
-                                .add(18, 18, 18)
-                                .add(jLabel7)
-                                .add(20, 20, 20)
-                                .add(jLabel8))
-                            .add(layout.createSequentialGroup()
-                                .add(caja_direccion, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(11, 11, 11)
-                                .add(caja_ciudad, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(6, 6, 6)
-                                .add(caja_region, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-                        .add(11, 11, 11)
-                        .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                            .add(layout.createSequentialGroup()
-                                .add(5, 5, 5)
-                                .add(jLabel9)
-                                .add(32, 32, 32)
-                                .add(jLabel10))
-                            .add(layout.createSequentialGroup()
-                                .add(caja_codigo_postal, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)
-                                .add(18, 18, 18)
-                                .add(caja_pais, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))))
-                    .add(layout.createSequentialGroup()
-                        .add(btn_rescribir)
-                        .add(28, 28, 28)
-                        .add(btn_Limpiar)
-                        .add(29, 29, 29)
-                        .add(btn_salir)))
-                .add(9, 9, 9)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(14, 14, 14)
-                        .add(jLabel11))
-                    .add(caja_telefono, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE))
-                .add(11, 11, 11)
-                .add(layout.createParallelGroup(org.jdesktop.layout.GroupLayout.LEADING)
-                    .add(layout.createSequentialGroup()
-                        .add(14, 14, 14)
-                        .add(jLabel12))
-                    .add(caja_fax, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE, 31, org.jdesktop.layout.GroupLayout.PREFERRED_SIZE)))
-        );
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(27, 8, 0, 32);
+        getContentPane().add(jButton1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -477,6 +563,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private javax.swing.JTextField caja_region;
     private javax.swing.JTextField caja_telefono;
     private javax.swing.JTextField caja_titulo_contacto;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

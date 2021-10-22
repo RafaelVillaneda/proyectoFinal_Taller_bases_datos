@@ -59,15 +59,14 @@
             <Property name="text" type="java.lang.String" value="Cambios"/>
           </Properties>
           <SubComponents>
-            <Menu class="javax.swing.JMenu" name="MenuCambiosClientes">
+            <MenuItem class="javax.swing.JMenuItem" name="jMenu_Cambios_Clientes">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cambios clientes"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="text" type="java.lang.String" value="Cambios Clientes"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuCambiosClientesActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_Cambios_ClientesActionPerformed"/>
               </Events>
-            </Menu>
+            </MenuItem>
           </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="jMenu1">
