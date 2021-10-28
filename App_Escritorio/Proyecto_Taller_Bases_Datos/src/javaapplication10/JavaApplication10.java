@@ -20,6 +20,7 @@ public class JavaApplication10 {
         new Login().setVisible(true);
         new ConexionBD();
         
+        
     }
     
 }
