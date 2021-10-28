@@ -20,9 +20,9 @@ public class ConexionBD {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String URL="jdbc:mysql://localhost:3306/Escuela_Topicos";
+			String URL="jdbc:mysql://localhost:3306/northwind";
 			
-			conexion=DriverManager.getConnection(URL,"root","REVT2001");
+			conexion=DriverManager.getConnection(URL,"rafa","rafaferrari01");
 		
 			System.out.println("CONEXION ESTABLECIDA");
 			System.out.println("Ya casi soy Ingeniero inmortal");
