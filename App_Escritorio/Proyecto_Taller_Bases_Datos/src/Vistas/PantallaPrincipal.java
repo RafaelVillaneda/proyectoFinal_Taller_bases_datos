@@ -43,7 +43,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Cambios_Clientes = new javax.swing.JMenuItem();
         jMenu_cambios_clientes_demo = new javax.swing.JMenuItem();
         jMenu_Cambios_clientes_demograficos = new javax.swing.JMenuItem();
-        jMenu1 = new javax.swing.JMenu();
+        jMenu_Consultas = new javax.swing.JMenu();
+        jMenuItem_consultas_clientes = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -144,8 +145,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu_Cambios);
 
-        jMenu1.setText("Consultas");
-        jMenuBar1.add(jMenu1);
+        jMenu_Consultas.setText("Consultas");
+
+        jMenuItem_consultas_clientes.setText("Consultas clientes");
+        jMenuItem_consultas_clientes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_consultas_clientesActionPerformed(evt);
+            }
+        });
+        jMenu_Consultas.add(jMenuItem_consultas_clientes);
+
+        jMenuBar1.add(jMenu_Consultas);
 
         setJMenuBar(jMenuBar1);
 
@@ -188,6 +198,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
        new Bajas_demografias().setVisible(true);
     }//GEN-LAST:event_jMenu_eliminar_clientes_demograficosActionPerformed
 
+    private void jMenuItem_consultas_clientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_consultas_clientesActionPerformed
+        new Consultas_clientes().setVisible(true);
+    }//GEN-LAST:event_jMenuItem_consultas_clientesActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -225,16 +239,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem_consultas_clientes;
     private javax.swing.JMenu jMenu_Altas;
     private javax.swing.JMenu jMenu_Bajas;
     private javax.swing.JMenu jMenu_Cambios;
     private javax.swing.JMenuItem jMenu_Cambios_Clientes;
     private javax.swing.JMenuItem jMenu_Cambios_clientes_demograficos;
     private javax.swing.JMenuItem jMenu_Cliente_demo;
+    private javax.swing.JMenu jMenu_Consultas;
     private javax.swing.JMenuItem jMenu_altasClientes;
     private javax.swing.JMenuItem jMenu_cambios_clientes_demo;
     private javax.swing.JMenuItem jMenu_cliente_demografico;
