@@ -5,6 +5,9 @@
  */
 
 package Vistas;
+import Controlador.UsuarioAdmin_DAO;
+import Modelo.UsuarioAdmin;
+import javax.swing.*;
 
 /**
  *
@@ -102,8 +105,18 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        new PantallaPrincipal().setVisible(true);
-        setVisible(false);
+        System.out.println(caja_User.getText());
+        UsuarioAdmin usuario=new UsuarioAdmin();
+        UsuarioAdmin_DAO usuDAO=new UsuarioAdmin_DAO();
+        usuario=usuDAO.buscar(caja_User.getText());
+        if(usuario!=null){
+        if(usuario.getUsuario().equals(caja_User.getText()) && usuario.getContraseña().equals(caja_Contra.getText())){
+            new PantallaPrincipal().setVisible(true);
+            setVisible(false);
+        }
+        }else{
+             JOptionPane.showMessageDialog(null,"Ingresaste incorrectamente alguno de los datos");
+        }
         
     }//GEN-LAST:event_btn_loginActionPerformed
 

@@ -6,6 +6,7 @@
 package javaapplication10;
 import Vistas.Login;
 import ConexionBD.ConexionBD;
+import java.sql.Connection;
 
 /**
  *
@@ -18,7 +19,7 @@ public class JavaApplication10 {
      */
     public static void main(String[] args) {
         new Login().setVisible(true);
-        new ConexionBD();
+        Connection a = ConexionBD.getConexion();
         
         
     }

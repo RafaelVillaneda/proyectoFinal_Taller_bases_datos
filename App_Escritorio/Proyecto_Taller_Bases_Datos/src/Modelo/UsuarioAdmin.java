@@ -13,6 +13,9 @@ public class UsuarioAdmin {
     private String usuario;
     private  String contraseña;
 
+    public UsuarioAdmin() {
+    }
+
     public UsuarioAdmin(String usuario, String contraseña) {
         this.usuario = usuario;
         this.contraseña = contraseña;
@@ -25,6 +28,8 @@ public class UsuarioAdmin {
     public String getUsuario() {
         return usuario;
     }
+
+    
 
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;

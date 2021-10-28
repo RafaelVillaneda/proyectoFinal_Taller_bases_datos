@@ -11,67 +11,69 @@ import java.sql.*;
  * @author Rafael Villaneda
  */
 public class ConexionBD {
-    
-	private Connection conexion;
-	private Statement stm;
-	private ResultSet rs;
+
+	private static Connection conexion=null;
+	private static PreparedStatement pstm; 
+	private static ResultSet rs;
 	
-	public ConexionBD() {
+	private ConexionBD() {
 		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");
+		Class.forName("com.mysql.cj.jdbc.Driver");
 			
-			String URL="jdbc:mysql://localhost:3306/northwind";
+		String URL = "jdbc:mysql://localhost:3306/northwind";
 			
-			conexion=DriverManager.getConnection(URL,"rafa","rafaferrari01");
-		
-			System.out.println("CONEXION ESTABLECIDA");
-			System.out.println("Ya casi soy Ingeniero inmortal");
+		conexion = DriverManager.getConnection(URL, "rafa", "rafaferrari01");
 			
 		} catch (ClassNotFoundException e) {
-			System.out.println("ERROR DE DRIVER");
-		}catch (SQLException e) {
-			System.out.println("Error de conexion a mysql o de la base de datos");
+			System.out.println("Error de DRIVER");
+		} catch (SQLException e) {
+			System.out.println("Error de conexion en MySQL");
 		}
 	}
+	public static Connection getConexion(){
+		 
+		 if (conexion == null){
+		     new ConexionBD();
+		 }
+		  
+		 return conexion;
+   }
+
 	
-	public void cerrarConexion() {
+	static void cerrarConexion() {
 		try {
-			stm.close();
+			pstm.close();
 			conexion.close();
 		} catch (SQLException e) {
-			System.out.println("Error de cierre concexion");
+			System.out.println("Error al cerrar la conexion");
 			e.printStackTrace();
 		}
 	}
-	
-	/*
-	public static void main(String[] args) {
-		new ConexionBD();
-	}
-	*/
-	//-----------------------METODO PARA OPERCIONES DDL DML (ABC)
-	public boolean ejecutarInstruccion(String sql) {
-		try {
-			stm= conexion.createStatement();
-			int resultado=stm.executeUpdate(sql); //1 todobien 2 todo mal
-			return resultado==1?true:false;
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			return false;
-		}
+        //-----------------------------------------------------------
+      public static boolean EliminarRegistro(String instruccion){
+		 try {
+			    String consulta = instruccion;
+			    pstm = conexion.prepareStatement(consulta);
+		        pstm.executeUpdate();
+		        return true;
+		 } catch (Exception ex) {
+		        System.out.println(ex.toString());
+		 }
+		 return false;
 	}
 	
-	//------------------------METODO PARA OPERACIONES DE CONSULTAS
-	public ResultSet ejecutarConsulta(String sql) {
-		try {
-			stm=conexion.createStatement();
-			rs=stm.executeQuery(sql);
-		} catch (SQLException e) {
-			System.out.println("No se pudo crear la");
-			e.printStackTrace();
-		}
-		return rs;
-	}
-	
+	public static  ResultSet ConsultarRegistro(String consulta){
+		
+		 try {
+		pstm = conexion.prepareStatement(consulta);
+		return pstm.executeQuery();
+		        
+		 } catch (Exception ex) {
+                    System.out.println("aqui estoy");
+		       // System.out.println(ex.toString());
+		 }
+		 return null;
+	}  
+      
 }
+
