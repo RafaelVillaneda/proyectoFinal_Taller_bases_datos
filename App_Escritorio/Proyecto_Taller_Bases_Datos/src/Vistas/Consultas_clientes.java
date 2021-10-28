@@ -74,6 +74,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(jTable1);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Consultas de clientes");
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/user.png"))); // NOI18N
@@ -96,6 +97,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel2, gridBagConstraints);
 
         caja_nombre_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_nombre_contactoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_nombre_contactoKeyTyped(evt);
             }
@@ -136,6 +140,12 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_Nombre_compañia1, gridBagConstraints);
+
+        caja_titulo_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_titulo_contactoKeyReleased(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 6;
@@ -168,6 +178,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel5, gridBagConstraints);
 
         caja_direccion.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_direccionKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_direccionKeyTyped(evt);
             }
@@ -227,6 +240,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_ciudad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_ciudadKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_ciudadKeyTyped(evt);
             }
@@ -258,6 +274,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_region.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_regionKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_regionKeyTyped(evt);
             }
@@ -289,6 +308,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_codigo_postal.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_codigo_postalKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_codigo_postalKeyTyped(evt);
             }
@@ -310,6 +332,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_pais.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_paisKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_paisKeyTyped(evt);
             }
@@ -341,6 +366,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_telefonoKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_telefonoKeyTyped(evt);
             }
@@ -371,6 +399,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         caja_fax.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_faxKeyReleased(evt);
+            }
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_faxKeyTyped(evt);
             }
@@ -557,9 +588,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
 	}catch (SQLException e) {
 	e.printStackTrace();
 	}
-
-		tabla.setModel(modeloDatos);
-
+	tabla.setModel(modeloDatos);
 	}
     
     private void btn_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimpiarActionPerformed
@@ -574,6 +603,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         caja_pais.setText("");
         caja_telefono.setText("");
         caja_fax.setText("");
+        actualizarTabla("SELECT * FROM customers");
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -589,17 +619,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         String agregado=caja_id.getText();
         String consulta="SELECT * FROM customers WHERE CustomerID LIKE '"+agregado+"%'";
         actualizarTabla(consulta);
-
-        caja_Nombre_compañia1.setText("");
-        caja_nombre_contacto.setText("");
-        caja_titulo_contacto.setText("");
-        caja_direccion.setText("");
-        caja_ciudad.setText("");
-        caja_region.setText("");
-        caja_codigo_postal.setText("");
-        caja_pais.setText("");
-        caja_telefono.setText("");
-        caja_fax.setText("");
+        
 
                 
     }//GEN-LAST:event_caja_idKeyReleased
@@ -616,17 +636,64 @@ public class Consultas_clientes extends javax.swing.JFrame {
         String agregado=caja_Nombre_compañia1.getText();
         String consulta="SELECT * FROM customers WHERE CompanyName LIKE '"+agregado+"%'";
         actualizarTabla(consulta);
-        caja_id.setText("");
-        caja_nombre_contacto.setText("");
-        caja_titulo_contacto.setText("");
-        caja_direccion.setText("");
-        caja_ciudad.setText("");
-        caja_region.setText("");
-        caja_codigo_postal.setText("");
-        caja_pais.setText("");
-        caja_telefono.setText("");
-        caja_fax.setText("");
+        
     }//GEN-LAST:event_caja_Nombre_compañia1KeyReleased
+
+    private void caja_nombre_contactoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_nombre_contactoKeyReleased
+        String agregado=caja_nombre_contacto.getText();
+        String consulta="SELECT * FROM customers WHERE contactName LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+        
+    }//GEN-LAST:event_caja_nombre_contactoKeyReleased
+
+    private void caja_titulo_contactoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_titulo_contactoKeyReleased
+        String agregado=caja_titulo_contacto.getText();
+        String consulta="SELECT * FROM customers WHERE contactTitle LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+        
+    }//GEN-LAST:event_caja_titulo_contactoKeyReleased
+
+    private void caja_direccionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_direccionKeyReleased
+        String agregado=caja_titulo_contacto.getText();
+        String consulta="SELECT * FROM customers WHERE address LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_direccionKeyReleased
+
+    private void caja_ciudadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_ciudadKeyReleased
+        String agregado=caja_ciudad.getText();
+        String consulta="SELECT * FROM customers WHERE city LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_ciudadKeyReleased
+
+    private void caja_regionKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_regionKeyReleased
+        String agregado=caja_region.getText();
+        String consulta="SELECT * FROM customers WHERE region LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_regionKeyReleased
+
+    private void caja_codigo_postalKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_codigo_postalKeyReleased
+       String agregado=caja_codigo_postal.getText();
+        String consulta="SELECT * FROM customers WHERE postalcode LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_codigo_postalKeyReleased
+
+    private void caja_paisKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_paisKeyReleased
+        String agregado=caja_pais.getText();
+        String consulta="SELECT * FROM customers WHERE country LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_paisKeyReleased
+
+    private void caja_telefonoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_telefonoKeyReleased
+        String agregado=caja_telefono.getText();
+        String consulta="SELECT * FROM customers WHERE phone LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_telefonoKeyReleased
+
+    private void caja_faxKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_faxKeyReleased
+        String agregado=caja_fax.getText();
+        String consulta="SELECT * FROM customers WHERE Fax LIKE '"+agregado+"%'";
+        actualizarTabla(consulta);
+    }//GEN-LAST:event_caja_faxKeyReleased
 
     /**
      * @param args the command line arguments

@@ -373,6 +373,11 @@ public class Cambios_clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
+        btn_rescribir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rescribirActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 1;
@@ -521,6 +526,10 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_rescribirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rescribirActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_rescribirActionPerformed
 
     /**
      * @param args the command line arguments

@@ -85,7 +85,6 @@ public class Login extends javax.swing.JFrame {
         getContentPane().add(jLabel3, gridBagConstraints);
 
         btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/entrar.png"))); // NOI18N
-        btn_login.setActionCommand("");
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_loginActionPerformed(evt);
