@@ -5,6 +5,8 @@
  */
 
 package Vistas;
+import ConexionBD.ConexionBD;
+import java.sql.SQLException;
 
 /**
  *
@@ -56,7 +58,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         btn_Limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tabla = new javax.swing.JTable();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -101,7 +103,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
@@ -121,7 +123,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
@@ -186,7 +188,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
@@ -261,7 +263,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
@@ -305,7 +307,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 65, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 65, 0, 0);
         getContentPane().add(caja_pais, gridBagConstraints);
 
         jLabel10.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -315,7 +317,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 16;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 0);
         getContentPane().add(jLabel10, gridBagConstraints);
 
         caja_telefono.addActionListener(new java.awt.event.ActionListener() {
@@ -372,19 +374,23 @@ public class Consultas_clientes extends javax.swing.JFrame {
         jLabel12.setText("Fax: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 39;
+        gridBagConstraints.gridy = 19;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(42, 3, 69, 0);
+        gridBagConstraints.insets = new java.awt.Insets(25, 1, 0, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_Buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_BuscarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 20;
-        gridBagConstraints.gridwidth = 8;
-        gridBagConstraints.gridheight = 19;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 1, 22, 0);
         getContentPane().add(btn_Buscar, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
@@ -397,9 +403,8 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 20;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 19;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 43, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 13, 22, 0);
         getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -409,14 +414,14 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 18;
-        gridBagConstraints.gridy = 19;
-        gridBagConstraints.gridheight = 18;
+        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridy = 20;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(39, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 1, 22, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -427,19 +432,19 @@ public class Consultas_clientes extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane2.setViewportView(jTable2);
+        jScrollPane2.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 20;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridheight = 17;
+        gridBagConstraints.gridx = 21;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 21;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 429;
-        gridBagConstraints.ipady = 400;
+        gridBagConstraints.ipadx = 663;
+        gridBagConstraints.ipady = 542;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(11, 6, 0, 347);
+        gridBagConstraints.insets = new java.awt.Insets(0, 18, 22, 10);
         getContentPane().add(jScrollPane2, gridBagConstraints);
 
         pack();
@@ -525,6 +530,24 @@ public class Consultas_clientes extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_caja_faxKeyTyped
 
+    public void actualizarTabla() {
+
+		String url="jdbc:mysql://localhost:3306/northwind";
+		String controlador="com.mysql.cj.jdbc.Driver";
+		ResultSetTableModel modeloDatos=null;
+		String consulta = "SELECT * FROM customers";
+		try {
+		modeloDatos=new ResultSetTableModel(controlador, url,consulta);
+		}catch (ClassNotFoundException e) {
+		e.printStackTrace();
+		}catch (SQLException e) {
+		e.printStackTrace();
+		}
+
+		tabla.setModel(modeloDatos);
+
+	}
+    
     private void btn_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimpiarActionPerformed
         caja_id.setText("");
         caja_Nombre_compañia1.setText("");
@@ -542,6 +565,10 @@ public class Consultas_clientes extends javax.swing.JFrame {
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_BuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_BuscarActionPerformed
+       actualizarTabla();
+    }//GEN-LAST:event_btn_BuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -608,7 +635,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
 }
