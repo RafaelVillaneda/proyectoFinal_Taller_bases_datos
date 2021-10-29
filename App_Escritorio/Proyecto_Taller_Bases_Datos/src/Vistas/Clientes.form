@@ -292,6 +292,9 @@
           <Image iconType="3" name="/Recursos_Visuales/Agregar_cliente.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_AgregarActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
           <GridBagConstraints gridX="13" gridY="5" gridWidth="1" gridHeight="5" fill="0" ipadX="0" ipadY="0" insetsTop="20" insetsLeft="99" insetsBottom="0" insetsRight="152" anchor="18" weightX="0.0" weightY="0.0"/>

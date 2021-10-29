@@ -5,7 +5,10 @@
  */
 
 package Vistas;
+import Modelo.Cliente;
+import Controlador.Cliente_DAO;
 import java.awt.Component;
+import javax.swing.*;
 /**
  *
  * @author Rafael Villaneda
@@ -363,6 +366,11 @@ public class Clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 13;
         gridBagConstraints.gridy = 5;
@@ -403,27 +411,27 @@ public class Clientes extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void caja_ciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_ciudadActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_ciudadActionPerformed
 
     private void caja_regionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_regionActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_regionActionPerformed
 
     private void caja_codigo_postalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_codigo_postalActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_codigo_postalActionPerformed
 
     private void caja_paisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_paisActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_paisActionPerformed
 
     private void caja_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_telefonoActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_telefonoActionPerformed
 
     private void caja_faxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_faxActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_caja_faxActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -500,6 +508,41 @@ public class Clientes extends javax.swing.JFrame {
         caja_fax.setText("");
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
+        if(validar_cajas_vacias()==true){
+            Cliente obj_cliente=new Cliente();
+            Cliente_DAO DAO=new Cliente_DAO();
+                obj_cliente.setCiudad(caja_ciudad.getText());
+		obj_cliente.setCodigo_postal(caja_codigo_postal.getText());
+		obj_cliente.setDireccion(caja_direccion.getText());
+		obj_cliente.setFax(caja_fax.getText());
+		obj_cliente.setId(caja_id.getText());
+		obj_cliente.setNombre_compañia(caja_Nombre_compañia1.getText());
+		obj_cliente.setPais(caja_pais.getText());
+		obj_cliente.setRegion(caja_region.getText());
+		obj_cliente.setTelefono(caja_telefono.getText());
+		obj_cliente.setTitulo_contacto(caja_titulo_contacto.getText());
+                System.out.println(obj_cliente);
+               if( DAO.insertarRegistro(obj_cliente)==true){
+                   JOptionPane.showMessageDialog(null,"Registro Agregado correctamente");
+               }else{
+                    JOptionPane.showMessageDialog(null,"Registro Agregado incorrectamente");
+               }
+        }else{
+            JOptionPane.showMessageDialog(null,"Alguna o algunas cajas Obligatorias (indentificador y nombre de la compañia) estan vacias");
+        }
+    }//GEN-LAST:event_btn_AgregarActionPerformed
+    
+    public boolean validar_cajas_vacias(){
+        boolean lleno;
+        if(caja_id.getText().isEmpty()) {
+            return false;
+	}
+        if(caja_Nombre_compañia1.getText().isEmpty()) {
+            return false;
+	}
+        return true;
+    }
     /**
      * @param args the command line arguments
      */

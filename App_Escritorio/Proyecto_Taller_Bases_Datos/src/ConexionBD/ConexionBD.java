@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package ConexionBD;
+import Modelo.Cliente;
 import java.sql.*;
 
 /**
@@ -73,7 +74,34 @@ public class ConexionBD {
 		       // System.out.println(ex.toString());
 		 }
 		 return null;
-	}  
+	}
+        
+        public static   boolean AgregarRegistroTablaClietes(Cliente cliente) {
+		try {
+		      // Creamos el PreparedStatement si no estaba ya creado.
+		        pstm = conexion.prepareStatement("insert into customers values(?,?,?,?,?"
+                                + ",?,?,?,?,?,"
+                                + "?)");
+		      pstm.setString(1,cliente.getId());//---
+                      pstm.setString(2,cliente.getNombre_compañia());
+                      pstm.setString(3,cliente.getNombre_contacto());
+                      pstm.setString(4,cliente.getTitulo_contacto());
+                      pstm.setString(5,cliente.getDireccion());
+                      pstm.setString(6,cliente.getCiudad());
+                      pstm.setString(7,cliente.getRegion());
+                      pstm.setString(8,cliente.getCodigo_postal());
+                      pstm.setString(9,cliente.getPais());
+                      pstm.setString(10,cliente.getTelefono());
+                      pstm.setString(11,cliente.getFax());
+		      
+	          pstm.executeUpdate();
+ 	          return true;
+		         
+		} catch (SQLException e) {
+		    e.printStackTrace();
+		}
+		return false;
+	}
       
 }
 
