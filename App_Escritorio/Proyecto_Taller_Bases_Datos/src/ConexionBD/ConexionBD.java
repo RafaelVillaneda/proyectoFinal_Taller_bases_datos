@@ -5,6 +5,7 @@
  */
 package ConexionBD;
 import Modelo.Cliente;
+import Modelo.Cliente_demo;
 import Modelo.Demografia_cliente;
 import java.sql.*;
 
@@ -110,6 +111,22 @@ public class ConexionBD {
 		        pstm = conexion.prepareStatement("insert into customerdemographics values(?,?)");
 		      pstm.setString(1,cliente.getId());
                       pstm.setString(2,cliente.getDesc());
+		      
+	          pstm.executeUpdate();
+ 	          return true;
+		         
+		} catch (SQLException e) {
+		    e.printStackTrace();
+		}
+		return false;
+	}
+        
+        public static   boolean AgregarRegistroTablaClientesDemo(Cliente_demo cliente) {
+		try {
+		      // Creamos el PreparedStatement si no estaba ya creado.
+		        pstm = conexion.prepareStatement("insert into customercustomerdemo values(?,?)");
+		      pstm.setString(1,cliente.getIdCliente());
+                      pstm.setString(2,cliente.getIdDemo());
 		      
 	          pstm.executeUpdate();
  	          return true;

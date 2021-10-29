@@ -5,6 +5,9 @@
  */
 
 package Vistas;
+import Modelo.Cliente_demo;
+import Controlador.Cliente_demo_DAO;
+import javax.swing.*;
 
 /**
  *
@@ -83,6 +86,11 @@ public class Cliente_demo_Altas extends javax.swing.JFrame {
         getContentPane().add(caja_Id_demografia, gridBagConstraints);
 
         btn_agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
+        btn_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_agregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -129,6 +137,31 @@ public class Cliente_demo_Altas extends javax.swing.JFrame {
         caja_Id_demografia.setText("");
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
+    private void btn_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_agregarActionPerformed
+        if(verficarVacios()){
+            Cliente_demo obj=new Cliente_demo();
+            Cliente_demo_DAO DAO= new Cliente_demo_DAO();
+            obj.setIdCliente(caja_Id_Cliente.getText());
+            obj.setIdDemo(caja_Id_demografia.getText());
+            //System.out.println(obj);
+            if(DAO.insertarRegistro(obj)){
+                JOptionPane.showMessageDialog(null,"Registro  Agregado correctamente");
+            }else{
+                JOptionPane.showMessageDialog(null,"Registro NO Agregado correctamente");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"Hay cajas Vacias");
+        }
+    }//GEN-LAST:event_btn_agregarActionPerformed
+    public boolean verficarVacios(){
+        if(caja_Id_Cliente.getText().equals("")){
+            return false;
+        }
+        if(caja_Id_demografia.getText().equals("")){
+            return false;
+        }
+        return true;
+    }
     /**
      * @param args the command line arguments
      */
