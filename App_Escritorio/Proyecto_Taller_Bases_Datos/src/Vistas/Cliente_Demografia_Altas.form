@@ -65,9 +65,12 @@
     <Component class="javax.swing.JButton" name="btn_Agregar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Recursos_Visuales/Buscar_tablas.png"/>
+          <Image iconType="3" name="/Recursos_Visuales/Agregar_cliente.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_AgregarActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
           <GridBagConstraints gridX="0" gridY="5" gridWidth="2" gridHeight="1" fill="0" ipadX="0" ipadY="0" insetsTop="18" insetsLeft="0" insetsBottom="11" insetsRight="0" anchor="18" weightX="0.0" weightY="0.0"/>
@@ -77,7 +80,7 @@
     <Component class="javax.swing.JButton" name="btn_limpiar">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="3" name="/Recursos_Visuales/Rescribir.png"/>
+          <Image iconType="3" name="/Recursos_Visuales/Limpiar.png"/>
         </Property>
       </Properties>
       <Events>

@@ -5,6 +5,7 @@
  */
 package ConexionBD;
 import Modelo.Cliente;
+import Modelo.Demografia_cliente;
 import java.sql.*;
 
 /**
@@ -93,6 +94,22 @@ public class ConexionBD {
                       pstm.setString(9,cliente.getPais());
                       pstm.setString(10,cliente.getTelefono());
                       pstm.setString(11,cliente.getFax());
+		      
+	          pstm.executeUpdate();
+ 	          return true;
+		         
+		} catch (SQLException e) {
+		    e.printStackTrace();
+		}
+		return false;
+	}
+        
+        public static   boolean AgregarRegistroTablaDemografias(Demografia_cliente cliente) {
+		try {
+		      // Creamos el PreparedStatement si no estaba ya creado.
+		        pstm = conexion.prepareStatement("insert into customerdemographics values(?,?)");
+		      pstm.setString(1,cliente.getId());
+                      pstm.setString(2,cliente.getDesc());
 		      
 	          pstm.executeUpdate();
  	          return true;

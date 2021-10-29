@@ -5,6 +5,9 @@
  */
 
 package Vistas;
+import Modelo.Demografia_cliente;
+import Controlador.Demografia_cliente_DAO;
+import javax.swing.*;
 
 /**
  *
@@ -79,7 +82,12 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(6, 18, 0, 10);
         getContentPane().add(caja_id_demografia1, gridBagConstraints);
 
-        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Agregar_cliente.png"))); // NOI18N
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -88,7 +96,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(18, 0, 11, 0);
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
-        btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
+        btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
         btn_limpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_limpiarActionPerformed(evt);
@@ -163,6 +171,33 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         caja_descripcion.setText("");
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
+        if(validarCajasVacias()==true){
+            Demografia_cliente obj=new Demografia_cliente();
+            Demografia_cliente_DAO DAO=new Demografia_cliente_DAO();
+            
+            obj.setDesc(caja_descripcion.getText());
+            obj.setId(caja_id_demografia1.getText());
+            //System.out.println(obj);
+            if(DAO.insertarRegistro(obj)){
+                JOptionPane.showMessageDialog(null,"Registro Agregado correctamente");
+            }else{
+                JOptionPane.showMessageDialog(null,"Registro NO AGREGADO");
+            }
+        }
+    }//GEN-LAST:event_btn_AgregarActionPerformed
+    
+    public boolean validarCajasVacias(){
+        if(caja_id_demografia1.getText().equals("")){
+            return false;
+        }
+        if(caja_descripcion.getText().equals("")){
+            return false;
+        }
+        return true;
+    }
+    
+    
     /**
      * @param args the command line arguments
      */

@@ -19,7 +19,8 @@ public class JavaApplication10 {
      */
     public static void main(String[] args) {
         new Login().setVisible(true);
-        Connection a = ConexionBD.getConexion(); 
+        Connection a = ConexionBD.getConexion();
+        
     }
     
 }
