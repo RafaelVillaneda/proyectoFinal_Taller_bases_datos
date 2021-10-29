@@ -72,7 +72,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 302;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -99,7 +99,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 37, 11, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 49, 11, 0);
         getContentPane().add(btn_limpiar, gridBagConstraints);
 
         btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -112,7 +112,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 78, 11, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 84, 11, 10);
         getContentPane().add(btn_Salir, gridBagConstraints);
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/grafica_pastel.png"))); // NOI18N
@@ -128,10 +128,9 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.ipady = 60;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 129, 0, 10);
+        gridBagConstraints.insets = new java.awt.Insets(0, 117, 0, 10);
         getContentPane().add(jLabel5, gridBagConstraints);
 
         caja_descripcion.setColumns(20);
@@ -141,7 +140,7 @@ public class Cliente_Demografia_Altas extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 299;
