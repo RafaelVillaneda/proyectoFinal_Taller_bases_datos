@@ -171,7 +171,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu_Cliente_demoActionPerformed
 
     private void jMenu_cliente_demograficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_cliente_demograficoActionPerformed
-        new Cliente_demo_Altas().setVisible(true);
+        new Cliente_Demografia_Altas().setVisible(true);
     }//GEN-LAST:event_jMenu_cliente_demograficoActionPerformed
 
     private void jMenu_Cambios_ClientesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_Cambios_ClientesActionPerformed

@@ -522,6 +522,7 @@ public class Clientes extends javax.swing.JFrame {
 		obj_cliente.setRegion(caja_region.getText());
 		obj_cliente.setTelefono(caja_telefono.getText());
 		obj_cliente.setTitulo_contacto(caja_titulo_contacto.getText());
+                obj_cliente.setNombre_contacto(caja_nombre_contacto.getText());
                 System.out.println(obj_cliente);
                if( DAO.insertarRegistro(obj_cliente)==true){
                    JOptionPane.showMessageDialog(null,"Registro Agregado correctamente");
