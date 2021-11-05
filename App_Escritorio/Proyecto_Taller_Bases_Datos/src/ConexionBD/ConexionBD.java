@@ -52,6 +52,16 @@ public class ConexionBD {
 			e.printStackTrace();
 		}
 	}
+        public static boolean Transaccion(String instruccion){
+		 try{
+			pstm = conexion.prepareStatement(instruccion);
+		        pstm.executeUpdate();
+		        return true;
+		 } catch (Exception ex) {
+		        System.out.println(ex.toString());
+		 }
+		 return false;
+	}
         
         public static boolean ActualizarRegistroCliente(Cliente a){
 		
@@ -150,7 +160,7 @@ public class ConexionBD {
         public static   boolean AgregarRegistroTablaClientesDemo(Cliente_demo cliente) {
 		try {
 		      // Creamos el PreparedStatement si no estaba ya creado.
-		        pstm = conexion.prepareStatement("insert into customercustomerdemo values(?,?)");
+		      pstm = conexion.prepareStatement("insert into customercustomerdemo values(?,?)");
 		      pstm.setString(1,cliente.getIdCliente());
                       pstm.setString(2,cliente.getIdDemo());
 		      

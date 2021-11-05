@@ -45,6 +45,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Cambios_clientes_demograficos = new javax.swing.JMenuItem();
         jMenu_Consultas = new javax.swing.JMenu();
         jMenuItem_consultas_clientes = new javax.swing.JMenuItem();
+        jMenuItem_demografias_por_cliente = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -155,6 +156,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenu_Consultas.add(jMenuItem_consultas_clientes);
 
+        jMenuItem_demografias_por_cliente.setText("Consultas demografias");
+        jMenuItem_demografias_por_cliente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem_demografias_por_clienteActionPerformed(evt);
+            }
+        });
+        jMenu_Consultas.add(jMenuItem_demografias_por_cliente);
+
         jMenuBar1.add(jMenu_Consultas);
 
         setJMenuBar(jMenuBar1);
@@ -202,6 +211,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         new Consultas_clientes().setVisible(true);
     }//GEN-LAST:event_jMenuItem_consultas_clientesActionPerformed
 
+    private void jMenuItem_demografias_por_clienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem_demografias_por_clienteActionPerformed
+        new Vista_demografias().setVisible(true);
+    }//GEN-LAST:event_jMenuItem_demografias_por_clienteActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -243,6 +256,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem_consultas_clientes;
+    private javax.swing.JMenuItem jMenuItem_demografias_por_cliente;
     private javax.swing.JMenu jMenu_Altas;
     private javax.swing.JMenu jMenu_Bajas;
     private javax.swing.JMenu jMenu_Cambios;
