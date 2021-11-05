@@ -5,6 +5,10 @@
  */
 
 package Vistas;
+import Controlador.Cliente_DAO;
+import Modelo.Cliente;
+import java.awt.Component;
+import javax.swing.*;
 
 /**
  *
@@ -53,7 +57,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         btn_rescribir = new javax.swing.JButton();
         btn_Limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btn_buscar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cambios Clientes");
@@ -372,7 +376,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(20, 11, 79, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
-        btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
+        btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
         btn_rescribir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_rescribirActionPerformed(evt);
@@ -416,7 +420,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
+        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 11;
@@ -424,7 +433,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 8, 0, 96);
-        getContentPane().add(jButton1, gridBagConstraints);
+        getContentPane().add(btn_buscar, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -531,6 +540,28 @@ public class Cambios_clientes extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_rescribirActionPerformed
 
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        Cliente cli=new Cliente();
+        Cliente_DAO DAO=new Cliente_DAO();
+        if(!caja_id.getText().isEmpty()){
+        cli=DAO.buscar(caja_id.getText());
+        }else{
+            JOptionPane.showMessageDialog(null,"Necesito que la caja con el indentificador no este vacia");
+        }
+        
+        caja_id.setText("");
+        caja_Nombre_compañia1.setText("");
+        caja_nombre_contacto.setText("");
+        caja_titulo_contacto.setText("");
+        caja_direccion.setText("");
+        caja_ciudad.setText("");
+        caja_region.setText("");
+        caja_codigo_postal.setText("");
+        caja_pais.setText("");
+        caja_telefono.setText("");
+        caja_fax.setText("");
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -568,6 +599,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_Limpiar;
+    private javax.swing.JButton btn_buscar;
     private javax.swing.JButton btn_rescribir;
     private javax.swing.JButton btn_salir;
     private javax.swing.JTextField caja_Nombre_compañia1;
@@ -581,7 +613,6 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private javax.swing.JTextField caja_region;
     private javax.swing.JTextField caja_telefono;
     private javax.swing.JTextField caja_titulo_contacto;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

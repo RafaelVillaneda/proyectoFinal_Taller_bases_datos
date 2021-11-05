@@ -52,6 +52,32 @@ public class ConexionBD {
 			e.printStackTrace();
 		}
 	}
+        
+        public static boolean ActualizarRegistroCliente(Cliente a){
+		
+		 try {
+			    pstm = conexion.prepareStatement("UPDATE customers SET CompanyName=?,ContactName=?,ContactTitle=?,Address=?,City=?,Region=?,"
+                                    + "PostalCode=?,Country=?,Phone=?,Fax=? WHERE CustomerID='"+a.getId()+"';");
+			    pstm.setString(1,a.getNombre_compañia());
+                            pstm.setString(2,a.getNombre_contacto());
+                            pstm.setString(3,a.getTitulo_contacto());
+                            pstm.setString(4,a.getDireccion());
+                            pstm.setString(5,a.getCiudad());
+                            pstm.setString(6,a.getRegion());
+                            pstm.setString(7,a.getCodigo_postal());
+                            pstm.setString(8,a.getPais());
+                            pstm.setString(9,a.getTelefono());
+                            pstm.setString(10,a.getFax());
+		        pstm.executeUpdate();
+		        
+		        return true;
+		        
+		 } catch (Exception ex) {
+		        System.out.println(ex.toString());
+		 }
+		 return false;
+	}
+        
         //-----------------------------------------------------------
       public static boolean EliminarRegistro(String instruccion){
 		 try {
@@ -136,6 +162,7 @@ public class ConexionBD {
 		}
 		return false;
 	}
+        
       
 }
 

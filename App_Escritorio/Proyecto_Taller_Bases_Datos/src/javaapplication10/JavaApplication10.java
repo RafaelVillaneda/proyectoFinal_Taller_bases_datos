@@ -5,6 +5,7 @@
  */
 package javaapplication10;
 import Vistas.Login;
+import Vistas.PantallaPrincipal;
 import ConexionBD.ConexionBD;
 import java.sql.Connection;
 
@@ -18,9 +19,9 @@ public class JavaApplication10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new Login().setVisible(true);
+        //new Login().setVisible(true);
         Connection a = ConexionBD.getConexion();
-        
+        new PantallaPrincipal().setVisible(true);
     }
     
 }

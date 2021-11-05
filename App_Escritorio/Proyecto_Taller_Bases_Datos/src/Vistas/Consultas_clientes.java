@@ -615,7 +615,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_BuscarActionPerformed
 
     private void caja_idKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyReleased
-        System.out.println(caja_id.getText());
+        //System.out.println(caja_id.getText());
         String agregado=caja_id.getText();
         String consulta="SELECT * FROM customers WHERE CustomerID LIKE '"+agregado+"%'";
         actualizarTabla(consulta);
