@@ -18,4 +18,9 @@ public class Cliente_demo_DAO {
 		resultado=ConexionBD.AgregarRegistroTablaClientesDemo(c);
 		return resultado;	
 	}
+    public boolean actualizar(Cliente_demo cli,String cambio){
+       boolean resutado=false;
+       resutado=ConexionBD.ActualizarRegistroClienteDemo(cli,cambio);
+       return resutado;
+    }
 }

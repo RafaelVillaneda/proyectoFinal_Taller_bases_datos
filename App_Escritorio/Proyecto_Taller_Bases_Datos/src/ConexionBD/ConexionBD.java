@@ -87,6 +87,23 @@ public class ConexionBD {
 		 }
 		 return false;
 	}
+        public static boolean ActualizarRegistroClienteDemo(Cliente_demo a,String cambio){
+		
+		 try {//Aqui esta el procedimientos almacenado
+                    pstm = conexion.prepareStatement("CALL sp_cambio_cliente_demo(?,?,?)");
+                        pstm.setString(1,a.getIdCliente());
+                        pstm.setString(2,a.getIdDemo());
+                        pstm.setString(3,cambio);
+                        System.out.println(a);
+		        pstm.executeUpdate();
+                        
+		        return true;
+		 } catch (Exception ex) {
+		        System.out.println(ex.toString());
+		 }
+		 return false;
+	}
+        
         
         //-----------------------------------------------------------
       public static boolean EliminarRegistro(String instruccion){
@@ -136,7 +153,7 @@ public class ConexionBD {
  	          return true;
 		         
 		} catch (SQLException e) {
-		    e.printStackTrace();
+		   // e.printStackTrace();
 		}
 		return false;
 	}
@@ -152,7 +169,7 @@ public class ConexionBD {
  	          return true;
 		         
 		} catch (SQLException e) {
-		    e.printStackTrace();
+		    //e.printStackTrace();
 		}
 		return false;
 	}
@@ -168,7 +185,7 @@ public class ConexionBD {
  	          return true;
 		         
 		} catch (SQLException e) {
-		    e.printStackTrace();
+		    //System.err.println("Me mori");
 		}
 		return false;
 	}

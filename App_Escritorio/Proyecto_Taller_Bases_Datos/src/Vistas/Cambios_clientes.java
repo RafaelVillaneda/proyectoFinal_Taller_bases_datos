@@ -531,6 +531,18 @@ public class Cambios_clientes extends javax.swing.JFrame {
         caja_pais.setText("");
         caja_telefono.setText("");
         caja_fax.setText("");
+        
+        caja_id.setEnabled(true);
+        caja_Nombre_compañia1.setEnabled(false);
+        caja_nombre_contacto.setEnabled(false);
+        caja_titulo_contacto.setEnabled(false);
+        caja_direccion.setEnabled(false);
+        caja_ciudad.setEnabled(false);
+        caja_region.setEnabled(false);
+        caja_codigo_postal.setEnabled(false);
+        caja_pais.setEnabled(false);
+        caja_telefono.setEnabled(false);
+        caja_fax.setEnabled(false);
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -586,12 +598,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
         Cliente cli=new Cliente();
         Cliente_DAO DAO=new Cliente_DAO();
+        
         if(!caja_id.getText().isEmpty()){
         cli=DAO.buscar(caja_id.getText());
-        }else{
-            JOptionPane.showMessageDialog(null,"Necesito que la caja con el indentificador no este vacia");
         }
-        if(cli!=null){
+        
+        if(cli!=null && !caja_id.getText().isEmpty() ){
         caja_Nombre_compañia1.setText(cli.getNombre_compañia());
         caja_nombre_contacto.setText(cli.getNombre_contacto());
         caja_titulo_contacto.setText(cli.getTitulo_contacto());
@@ -602,19 +614,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         caja_pais.setText(cli.getPais());
         caja_telefono.setText(cli.getTelefono());
         caja_fax.setText(cli.getTelefono());
-        /*
-        cli.getId()
-        cli.getNombre_compañia()
-        cli.getNombre_contacto()
-        cli.getTitulo_contacto()
-        cli.getDireccion()
-        cli.getCiudad()
-        cli.getRegion()
-        cli.getCodigo_postal()
-        cli.getPais()
-        cli.getTelefono()
-        cli.getTelefono()
-        */
+        //------------------------------------------------------------------------------
         caja_id.setEnabled(false);
         caja_Nombre_compañia1.setEnabled(true);
         caja_nombre_contacto.setEnabled(true);
