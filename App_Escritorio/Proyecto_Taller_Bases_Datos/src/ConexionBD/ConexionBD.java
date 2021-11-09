@@ -123,7 +123,7 @@ public class ConexionBD {
         //-----------------------------------------------------------
       public static boolean EliminarRegistro(String instruccion){
 		 try {
-			    String consulta = instruccion;
+                    String consulta = instruccion;
 			    pstm = conexion.prepareStatement(consulta);
 		        pstm.executeUpdate();
 		        return true;

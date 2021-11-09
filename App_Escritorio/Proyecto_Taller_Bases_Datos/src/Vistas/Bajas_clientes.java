@@ -6,12 +6,17 @@
 
 package Vistas;
 
+import Controlador.Cliente_DAO;
+import Modelo.Cliente;
+import java.awt.Component;
+import javax.swing.*;
+
 /**
  *
  * @author Rafael Villaneda
  */
 public class Bajas_clientes extends javax.swing.JFrame {
-
+    Cliente cli=new Cliente();
     /** Creates new form Bajas_clientes */
     public Bajas_clientes() {
         initComponents();
@@ -363,6 +368,11 @@ public class Bajas_clientes extends javax.swing.JFrame {
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_eliminar_registro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
+        btn_eliminar_registro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_eliminar_registroActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 1;
@@ -404,6 +414,11 @@ public class Bajas_clientes extends javax.swing.JFrame {
         getContentPane().add(btn_salir, gridBagConstraints);
 
         btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_buscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_buscarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 11;
@@ -521,6 +536,45 @@ public class Bajas_clientes extends javax.swing.JFrame {
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_btn_salirActionPerformed
+
+    private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+    cli=new Cliente();
+        Cliente_DAO DAO=new Cliente_DAO();
+        
+        if(!caja_id.getText().isEmpty()){
+        cli=DAO.buscar(caja_id.getText());
+        }
+        
+        if(cli!=null && !caja_id.getText().isEmpty() ){
+        caja_Nombre_compañia1.setText(cli.getNombre_compañia());
+        caja_nombre_contacto.setText(cli.getNombre_contacto());
+        caja_titulo_contacto.setText(cli.getTitulo_contacto());
+        caja_direccion.setText(cli.getDireccion());
+        caja_ciudad.setText(cli.getCiudad());
+        caja_region.setText(cli.getRegion());
+        caja_codigo_postal.setText(cli.getCodigo_postal());
+        caja_pais.setText(cli.getPais());
+        caja_telefono.setText(cli.getTelefono());
+        caja_fax.setText(cli.getTelefono());
+        }else{
+            JOptionPane.showMessageDialog(null,"No existe un cliente con ese indentificador");
+        }        
+    }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void btn_eliminar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_registroActionPerformed
+        if(!caja_id.getText().isEmpty()){
+            cli=new Cliente();
+            Cliente_DAO DAO=new Cliente_DAO();
+            boolean eliminado=DAO.borrarRegistro(cli);
+            if(eliminado){
+                JOptionPane.showMessageDialog(null,"Registro eliminado satisfactoriamente");
+            }else{
+                JOptionPane.showMessageDialog(null,"El registro  no pudo ser eliminado satisfactoriamente");
+            }
+        }else{
+            JOptionPane.showMessageDialog(null,"No Puede estar vacia la caja del indentificador");
+        }
+    }//GEN-LAST:event_btn_eliminar_registroActionPerformed
 
     /**
      * @param args the command line arguments

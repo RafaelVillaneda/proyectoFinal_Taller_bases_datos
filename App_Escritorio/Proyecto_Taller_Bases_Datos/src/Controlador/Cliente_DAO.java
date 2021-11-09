@@ -55,5 +55,11 @@ public class Cliente_DAO {
 		}
 		return mov;
     }
+    public boolean borrarRegistro(Cliente c){
+        boolean resultado = false;
+        String sql="DELETE FROM customers WHERE CustomerID='"+c.getId()+"'";
+	resultado = ConexionBD.EliminarRegistro(sql);
+	return resultado;
+    }
     
 }
