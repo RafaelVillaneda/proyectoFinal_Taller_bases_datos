@@ -103,6 +103,21 @@ public class ConexionBD {
 		 }
 		 return false;
 	}
+        public static boolean ActualizarRegistroClienteDemografia(Demografia_cliente a){
+		
+		 try {
+			pstm = conexion.prepareStatement("UPDATE customerdemographics SET CustomerDesc=? WHERE CustomerTypeID='"+a.getId()+"'");
+                        pstm.setString(1,a.getDesc());
+			   
+		        pstm.executeUpdate();
+		        
+		        return true;
+		        
+		 } catch (Exception ex) {
+		        System.out.println(ex.toString());
+		 }
+		 return false;
+	}
         
         
         //-----------------------------------------------------------
