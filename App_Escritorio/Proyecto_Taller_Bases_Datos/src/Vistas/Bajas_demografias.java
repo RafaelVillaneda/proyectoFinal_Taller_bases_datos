@@ -5,7 +5,8 @@
  */
 
 package Vistas;
-
+import Modelo.Demografia_cliente;
+import Controlador.Demografia_cliente_DAO;
 /**
  *
  * @author Rafael Villaneda
@@ -66,6 +67,8 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(14, 0, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
+
+        caja_id_desc.setEnabled(false);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -87,6 +90,11 @@ public class Bajas_demografias extends javax.swing.JFrame {
         getContentPane().add(caja_id_demografia1, gridBagConstraints);
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_Agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_AgregarActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
@@ -95,6 +103,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
         btn_borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
+        btn_borrar.setEnabled(false);
         btn_borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_borrarActionPerformed(evt);
@@ -134,6 +143,14 @@ public class Bajas_demografias extends javax.swing.JFrame {
     private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
         setVisible(false);
     }//GEN-LAST:event_btn_SalirActionPerformed
+
+    private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
+        Demografia_cliente obj=new Demografia_cliente();
+        Demografia_cliente_DAO DAO= new Demografia_cliente_DAO();
+        obj=DAO.buscar(caja_id_demografia1.getText());
+        caja_id_demografia1.setText(obj.getId());
+        caja_id_desc.setText(obj.getDesc());
+    }//GEN-LAST:event_btn_AgregarActionPerformed
 
     /**
      * @param args the command line arguments
