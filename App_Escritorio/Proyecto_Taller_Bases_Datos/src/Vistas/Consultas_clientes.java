@@ -626,7 +626,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
 
     private void caja_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyTyped
         char car = evt.getKeyChar();
-	if(Character.isLetter(car)){
+	if(Character.isLetter(car) ||Character.isDigit(car)){
             }else{
 		evt.consume();
 	}

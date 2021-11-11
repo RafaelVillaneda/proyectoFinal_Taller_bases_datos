@@ -9,15 +9,17 @@ import Modelo.Cliente;
 import Controlador.Cliente_DAO;
 import java.awt.Component;
 import javax.swing.*;
+import ConexionBD.ConexionBD;
 /**
  *
  * @author Rafael Villaneda
  */
 public class Clientes extends javax.swing.JFrame {
-
+    int conta=0;
     /** Creates new form Clientes */
     public Clientes() {
         initComponents();
+        
     }
 
     /** This method is called from within the constructor to
@@ -435,6 +437,8 @@ public class Clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_caja_faxActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
+        conta=0;
+        ConexionBD.Transaccion("COMMIT;");
         setVisible(false);
     }//GEN-LAST:event_btn_salirActionPerformed
 
@@ -525,7 +529,21 @@ public class Clientes extends javax.swing.JFrame {
                 obj_cliente.setNombre_contacto(caja_nombre_contacto.getText());
                 System.out.println(obj_cliente);
                if( DAO.insertarRegistro(obj_cliente)==true){
+                   if(conta==0){
+                       ConexionBD.Transaccion("START TRANSACTION;");
+                   }
                    JOptionPane.showMessageDialog(null,"Registro Agregado correctamente");
+                   caja_id.setText("");
+                   caja_Nombre_compañia1.setText("");
+                   caja_nombre_contacto.setText("");
+                   caja_titulo_contacto.setText("");
+                   caja_direccion.setText("");
+                   caja_ciudad.setText("");
+                   caja_region.setText("");
+                   caja_codigo_postal.setText("");
+                   caja_pais.setText("");
+                   caja_telefono.setText("");
+                   caja_fax.setText("");
                }else{
                     JOptionPane.showMessageDialog(null,"Registro Agregado incorrectamente");
                }
