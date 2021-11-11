@@ -57,6 +57,7 @@ public class Cliente_DAO {
     }
     public boolean borrarRegistro(Cliente c){
         boolean resultado = false;
+        System.out.println(c);
         String sql="DELETE FROM customers WHERE CustomerID='"+c.getId()+"'";
 	resultado = ConexionBD.EliminarRegistro(sql);
 	return resultado;

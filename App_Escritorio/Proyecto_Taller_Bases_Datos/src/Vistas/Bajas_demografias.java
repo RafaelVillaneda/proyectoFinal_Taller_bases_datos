@@ -46,8 +46,9 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 3;
-        gridBagConstraints.ipady = -4;
+        gridBagConstraints.ipady = -6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(0, 31, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Indentificador de la demografia: ");
@@ -56,7 +57,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(38, 2, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 2, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Descripcion de la demografia: ");
@@ -65,7 +66,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(14, 31, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
 
         caja_id_desc.setEnabled(false);
@@ -77,7 +78,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 306;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 31);
         getContentPane().add(caja_id_desc, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -86,7 +87,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 106;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(35, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(33, 18, 0, 0);
         getContentPane().add(caja_id_demografia1, gridBagConstraints);
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
@@ -99,7 +100,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(71, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(71, 31, 0, 0);
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
         btn_borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N

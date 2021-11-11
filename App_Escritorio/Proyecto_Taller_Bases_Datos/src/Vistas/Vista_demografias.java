@@ -17,6 +17,7 @@ public class Vista_demografias extends javax.swing.JFrame {
     /** Creates new form Vista_demografias */
     public Vista_demografias() {
         initComponents();
+        actualizarTabla("SELECT * FROM vista_clientes_demografia");
     }
     
     
@@ -46,37 +47,17 @@ public class Vista_demografias extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jLabel1 = new javax.swing.JLabel();
-        caja_id_cliente = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        caja_id_demo = new javax.swing.JTextField();
+        caja_id_desc = new javax.swing.JTextField();
+        caja_id_cliente = new javax.swing.JTextField();
+        btn_Salir = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
-        jLabel1.setText("Indentificador del cliente:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(30, 18, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
-
-        caja_id_cliente.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                caja_id_clienteKeyReleased(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 128;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 18, 0, 0);
-        getContentPane().add(caja_id_cliente, gridBagConstraints);
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -93,54 +74,104 @@ public class Vista_demografias extends javax.swing.JFrame {
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.gridheight = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 429;
-        gridBagConstraints.ipady = 134;
+        gridBagConstraints.ipadx = 299;
+        gridBagConstraints.ipady = 125;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(21, 18, 49, 60);
+        gridBagConstraints.insets = new java.awt.Insets(32, 10, 11, 0);
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
-        jLabel2.setText("Indentificador demografico:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 18, 0, 0);
-        getContentPane().add(jLabel2, gridBagConstraints);
-
-        caja_id_demo.addKeyListener(new java.awt.event.KeyAdapter() {
+        caja_id_desc.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                caja_id_demoKeyReleased(evt);
+                caja_id_descKeyReleased(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 13;
         gridBagConstraints.gridheight = 2;
-        gridBagConstraints.ipadx = 128;
+        gridBagConstraints.ipadx = 306;
+        gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 18, 0, 0);
-        getContentPane().add(caja_id_demo, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 10);
+        getContentPane().add(caja_id_desc, gridBagConstraints);
+
+        caja_id_cliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_id_clienteKeyReleased(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.ipadx = 117;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(33, 18, 0, 0);
+        getContentPane().add(caja_id_cliente, gridBagConstraints);
+
+        btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
+        btn_Salir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_SalirActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 9;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(32, 42, 0, 10);
+        getContentPane().add(btn_Salir, gridBagConstraints);
+
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/user.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipady = -6;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        getContentPane().add(jLabel3, gridBagConstraints);
+
+        jLabel4.setText("Indentificador del cliente");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(36, 18, 0, 0);
+        getContentPane().add(jLabel4, gridBagConstraints);
+
+        jLabel5.setText("Descripcion de la demografia: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(14, 10, 0, 0);
+        getContentPane().add(jLabel5, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
+        setVisible(false);
+    }//GEN-LAST:event_btn_SalirActionPerformed
+
     private void caja_id_clienteKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_clienteKeyReleased
-        String agregado=caja_id_cliente.getText();
-        String consulta="SELECT * FROM vista_clientes_demografia WHERE ContactName like '%"+agregado+"%';";
-        actualizarTabla(consulta);
+        actualizarTabla("SELECT * FROM vista_clientes_demografia WHERE CustomerID LIKE '%"+caja_id_cliente.getText()+"%';");
     }//GEN-LAST:event_caja_id_clienteKeyReleased
 
-    private void caja_id_demoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_demoKeyReleased
-        String agregado=caja_id_demo.getText();
-        String consulta="SELECT * FROM vista_clientes_demografia WHERE ContactName like '%"+agregado+"%';";
-        actualizarTabla(consulta);
-    }//GEN-LAST:event_caja_id_demoKeyReleased
+    private void caja_id_descKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_descKeyReleased
+        actualizarTabla("SELECT * FROM vista_clientes_demografia WHERE  Descripcion_de_la_demografia LIKE '%"+caja_id_desc.getText()+"%';");
+    }//GEN-LAST:event_caja_id_descKeyReleased
 
     /**
      * @param args the command line arguments
@@ -178,10 +209,12 @@ public class Vista_demografias extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Salir;
     private javax.swing.JTextField caja_id_cliente;
-    private javax.swing.JTextField caja_id_demo;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JTextField caja_id_desc;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables

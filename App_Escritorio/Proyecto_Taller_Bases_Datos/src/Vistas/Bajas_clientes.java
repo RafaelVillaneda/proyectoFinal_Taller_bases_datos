@@ -538,7 +538,7 @@ public class Bajas_clientes extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
-    cli=new Cliente();
+        cli=new Cliente();
         Cliente_DAO DAO=new Cliente_DAO();
         
         if(!caja_id.getText().isEmpty()){
@@ -563,11 +563,22 @@ public class Bajas_clientes extends javax.swing.JFrame {
 
     private void btn_eliminar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_registroActionPerformed
         if(!caja_id.getText().isEmpty()){
-            cli=new Cliente();
+            
             Cliente_DAO DAO=new Cliente_DAO();
             boolean eliminado=DAO.borrarRegistro(cli);
             if(eliminado){
                 JOptionPane.showMessageDialog(null,"Registro eliminado satisfactoriamente");
+                caja_id.setText("");
+        caja_Nombre_compañia1.setText("");
+        caja_nombre_contacto.setText("");
+        caja_titulo_contacto.setText("");
+        caja_direccion.setText("");
+        caja_ciudad.setText("");
+        caja_region.setText("");
+        caja_codigo_postal.setText("");
+        caja_pais.setText("");
+        caja_telefono.setText("");
+        caja_fax.setText("");
             }else{
                 JOptionPane.showMessageDialog(null,"El registro  no pudo ser eliminado satisfactoriamente");
             }

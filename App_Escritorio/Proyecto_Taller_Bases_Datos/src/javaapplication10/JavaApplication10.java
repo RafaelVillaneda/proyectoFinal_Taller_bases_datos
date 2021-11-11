@@ -8,7 +8,7 @@ import Vistas.Login;
 import Vistas.PantallaPrincipal;
 import ConexionBD.ConexionBD;
 import java.sql.Connection;
-import Modelo.llamarReporte;
+
 
 /**
  *
@@ -22,9 +22,9 @@ public class JavaApplication10 {
     public static void main(String[] args) {
         //new Login().setVisible(true);
         Connection a = ConexionBD.getConexion();
-        //new PantallaPrincipal().setVisible(true);
-        llamarReporte llamado=new llamarReporte();
-        llamado.mostrarReporte();
+        new PantallaPrincipal().setVisible(true);
+       // llamarReporte llamado=new llamarReporte();
+        //llamado.mostrarReporte();
     }
     
 }

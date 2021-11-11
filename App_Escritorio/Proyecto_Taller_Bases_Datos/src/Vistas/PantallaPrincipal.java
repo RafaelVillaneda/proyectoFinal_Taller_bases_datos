@@ -5,6 +5,7 @@
  */
 
 package Vistas;
+import Modelo.llamarReporte;
 
 /**
  *
@@ -46,6 +47,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenu_Consultas = new javax.swing.JMenu();
         jMenuItem_consultas_clientes = new javax.swing.JMenuItem();
         jMenuItem_demografias_por_cliente = new javax.swing.JMenuItem();
+        jMenu_Reporte = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -166,6 +169,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu_Consultas);
 
+        jMenu_Reporte.setText("Reportes");
+
+        jMenuItem2.setText("Generar reporte de clientes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenu_Reporte.add(jMenuItem2);
+
+        jMenuBar1.add(jMenu_Reporte);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -215,6 +230,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         new Vista_demografias().setVisible(true);
     }//GEN-LAST:event_jMenuItem_demografias_por_clienteActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+       llamarReporte llamado=new llamarReporte();
+        llamado.mostrarReporte();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -255,6 +275,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem_consultas_clientes;
     private javax.swing.JMenuItem jMenuItem_demografias_por_cliente;
     private javax.swing.JMenu jMenu_Altas;
@@ -264,6 +285,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenu_Cambios_clientes_demograficos;
     private javax.swing.JMenuItem jMenu_Cliente_demo;
     private javax.swing.JMenu jMenu_Consultas;
+    private javax.swing.JMenu jMenu_Reporte;
     private javax.swing.JMenuItem jMenu_altasClientes;
     private javax.swing.JMenuItem jMenu_cambios_clientes_demo;
     private javax.swing.JMenuItem jMenu_cliente_demografico;
