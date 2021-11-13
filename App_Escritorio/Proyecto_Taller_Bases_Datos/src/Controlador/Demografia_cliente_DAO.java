@@ -26,6 +26,13 @@ public class Demografia_cliente_DAO {
 		resultado=ConexionBD.ActualizarRegistroClienteDemografia(c);
 		return resultado;	
 	}
+    public boolean borrarRegistro(Demografia_cliente c){
+        boolean resultado = false;
+        System.out.println(c);
+        String sql="DELETE FROM customerdemographics WHERE CustomerTypeID='"+c.getId()+"'";
+	resultado = ConexionBD.EliminarRegistro(sql);
+	return resultado;
+    }
     public Demografia_cliente buscar(String filtro) {
         
         
@@ -49,4 +56,5 @@ public class Demografia_cliente_DAO {
 		return mov;
     
     }
+    
 }

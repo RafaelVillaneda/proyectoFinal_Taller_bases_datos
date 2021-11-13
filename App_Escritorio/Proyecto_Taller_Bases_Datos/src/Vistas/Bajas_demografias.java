@@ -7,6 +7,7 @@
 package Vistas;
 import Modelo.Demografia_cliente;
 import Controlador.Demografia_cliente_DAO;
+import javax.swing.*;
 /**
  *
  * @author Rafael Villaneda
@@ -139,6 +140,13 @@ public class Bajas_demografias extends javax.swing.JFrame {
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
         Demografia_cliente obj=new Demografia_cliente();
         Demografia_cliente_DAO DAO=new Demografia_cliente_DAO();
+        obj.setId(caja_id_demografia1.getText());
+        if(DAO.borrarRegistro(obj)){
+            JOptionPane.showMessageDialog(null,"Demografia eliminada");
+            btn_borrar.setEnabled(false);
+        }else{
+            JOptionPane.showMessageDialog(null,"Error la demografia no se pudo eliminar");
+        }
     }//GEN-LAST:event_btn_borrarActionPerformed
 
     private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed
@@ -149,8 +157,13 @@ public class Bajas_demografias extends javax.swing.JFrame {
         Demografia_cliente obj=new Demografia_cliente();
         Demografia_cliente_DAO DAO= new Demografia_cliente_DAO();
         obj=DAO.buscar(caja_id_demografia1.getText());
+        if(obj!=null){
         caja_id_demografia1.setText(obj.getId());
         caja_id_desc.setText(obj.getDesc());
+        btn_borrar.setEnabled(true);
+        }else{
+            JOptionPane.showMessageDialog(null,"No existe una demografia con ese indentificador");
+        }
     }//GEN-LAST:event_btn_AgregarActionPerformed
 
     /**
