@@ -41,7 +41,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenu_cliente_demografico">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cliente demografico"/>
+                <Property name="text" type="java.lang.String" value="Demografia"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_cliente_demograficoActionPerformed"/>
@@ -72,7 +72,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenu_eliminar_clientes_demograficos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Eliminar Demografias de clientes"/>
+                <Property name="text" type="java.lang.String" value="Eliminar Demografias"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_eliminar_clientes_demograficosActionPerformed"/>

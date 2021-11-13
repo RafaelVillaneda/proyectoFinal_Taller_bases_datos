@@ -23,4 +23,13 @@ public class Cliente_demo_DAO {
        resutado=ConexionBD.ActualizarRegistroClienteDemo(cli,cambio);
        return resutado;
     }
+    
+    public boolean borrarRegistro(Cliente_demo c){
+        boolean resultado = false;
+        System.out.println(c);
+        String sql="DELETE FROM customercustomerdemo WHERE CustomerID='"+c.getIdCliente()+"' AND CustomerTypeID='"+c.getIdDemo()+"';";
+	resultado = ConexionBD.EliminarRegistro(sql);
+	return resultado;
+    }
+    
 }

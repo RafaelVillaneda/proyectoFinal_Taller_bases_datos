@@ -83,7 +83,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenu_Altas.add(jMenu_Cliente_demo);
 
-        jMenu_cliente_demografico.setText("Cliente demografico");
+        jMenu_cliente_demografico.setText("Demografia");
         jMenu_cliente_demografico.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu_cliente_demograficoActionPerformed(evt);
@@ -111,7 +111,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenu_Bajas.add(jMenu_eliminar_cliente_demo);
 
-        jMenu_eliminar_clientes_demograficos.setText("Eliminar Demografias de clientes");
+        jMenu_eliminar_clientes_demograficos.setText("Eliminar Demografias");
         jMenu_eliminar_clientes_demograficos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu_eliminar_clientes_demograficosActionPerformed(evt);

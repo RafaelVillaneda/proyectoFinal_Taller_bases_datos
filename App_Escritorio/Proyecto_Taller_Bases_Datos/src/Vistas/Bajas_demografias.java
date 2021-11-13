@@ -137,8 +137,8 @@ public class Bajas_demografias extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
-        caja_id_demografia1.setText("");
-        caja_id_desc.setText("");
+        Demografia_cliente obj=new Demografia_cliente();
+        Demografia_cliente_DAO DAO=new Demografia_cliente_DAO();
     }//GEN-LAST:event_btn_borrarActionPerformed
 
     private void btn_SalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_SalirActionPerformed

@@ -5,7 +5,9 @@
  */
 
 package Vistas;
-
+import Controlador.Cliente_demo_DAO;
+import Modelo.Cliente_demo;
+import javax.swing.*;
 /**
  *
  * @author Rafael Villaneda
@@ -143,7 +145,13 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_salirActionPerformed
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
-        
+        Cliente_demo_DAO DAO=new Cliente_demo_DAO();
+        Cliente_demo obj=new Cliente_demo(caja_Id_Cliente.getText(),caja_Id_demografia.getText());
+        if(DAO.borrarRegistro(obj)){
+            JOptionPane.showMessageDialog(null,"Registro Eliminado correctamente");
+        }else{
+            JOptionPane.showMessageDialog(null,"El registro no pudo ser eliminado");
+        }
     }//GEN-LAST:event_btn_eliminarActionPerformed
 
     /**
