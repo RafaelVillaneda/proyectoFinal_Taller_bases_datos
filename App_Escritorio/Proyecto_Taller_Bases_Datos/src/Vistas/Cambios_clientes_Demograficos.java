@@ -35,7 +35,6 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        caja_id_desc = new javax.swing.JTextField();
         caja_id_demografia1 = new javax.swing.JTextField();
         btn_rescribir = new javax.swing.JButton();
         btn_limpiar = new javax.swing.JButton();
@@ -43,25 +42,28 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         btn_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        caja_id_desc = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/user.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = -18;
         gridBagConstraints.ipady = -4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 37, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Indentificador de la demografia: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(40, 20, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
@@ -70,21 +72,10 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 96, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(32, 33, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
-
-        caja_id_desc.setEnabled(false);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 13;
-        gridBagConstraints.ipadx = 227;
-        gridBagConstraints.ipady = 102;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 20, 0, 0);
-        getContentPane().add(caja_id_desc, gridBagConstraints);
 
         caja_id_demografia1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -92,9 +83,8 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 52;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -112,7 +102,7 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 10, 0, 0);
         getContentPane().add(btn_rescribir, gridBagConstraints);
 
         btn_limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
@@ -122,10 +112,11 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 9, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 10, 0, 0);
         getContentPane().add(btn_limpiar, gridBagConstraints);
 
         btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -135,10 +126,11 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridx = 7;
         gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 6, 0, 0);
         getContentPane().add(btn_Salir, gridBagConstraints);
 
         btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
@@ -150,9 +142,9 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.ipadx = -33;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(54, 6, 0, 0);
         getContentPane().add(btn_buscar, gridBagConstraints);
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -169,17 +161,33 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 15;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 17;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 231;
-        gridBagConstraints.ipady = 94;
+        gridBagConstraints.ipadx = 378;
+        gridBagConstraints.ipady = 40;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(32, 64, 13, 10);
+        gridBagConstraints.insets = new java.awt.Insets(30, 10, 0, 10);
         getContentPane().add(jScrollPane1, gridBagConstraints);
+
+        caja_id_desc.setEnabled(false);
+        jScrollPane2.setViewportView(caja_id_desc);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 262;
+        gridBagConstraints.ipady = 77;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(18, 33, 0, 0);
+        getContentPane().add(jScrollPane2, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -300,6 +308,7 @@ public class Cambios_clientes_Demograficos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
