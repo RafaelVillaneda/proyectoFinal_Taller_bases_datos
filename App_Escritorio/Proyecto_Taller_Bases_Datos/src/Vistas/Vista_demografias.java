@@ -170,7 +170,7 @@ public class Vista_demografias extends javax.swing.JFrame {
     }//GEN-LAST:event_caja_id_clienteKeyReleased
 
     private void caja_id_descKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_descKeyReleased
-        actualizarTabla("SELECT * FROM vista_clientes_demografia WHERE  Descripcion_de_la_demografia LIKE '%"+caja_id_desc.getText()+"%';");
+        actualizarTabla("SELECT * FROM vista_clientes_demografia WHERE  CustomerDesc LIKE '%"+caja_id_desc.getText()+"%';");
     }//GEN-LAST:event_caja_id_descKeyReleased
 
     /**
