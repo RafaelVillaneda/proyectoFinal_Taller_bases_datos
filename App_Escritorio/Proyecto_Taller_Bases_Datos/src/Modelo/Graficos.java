@@ -28,7 +28,8 @@ public class Graficos {
         Connection c = ConexionBD.getConexion();
         
     
-        public void dibujar(){
+        public Boolean dibujar(){
+            boolean retorno=false;
             try {
                 String consulta="SELECT city,COUNT(City)AS Cantidad FROM CUSTOMERS WHERE (city IS NOT null) GROUP BY city;";
                 
@@ -43,6 +44,7 @@ public class Graficos {
                     }
                 } catch (SQLException ex) {
                     Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+                    return false;
                 }
 
                 //dibujamos el grafico
@@ -56,6 +58,8 @@ public class Graficos {
                 ChartUtilities.saveChartAsPNG(f, chart, alto, ancho);
             } catch (IOException ex) {
                 Logger.getLogger(Graficos.class.getName()).log(Level.SEVERE, null, ex);
+                return false;
             }
+            return true;
         }
 }

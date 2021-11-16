@@ -6,6 +6,8 @@
 
 package Vistas;
 import Modelo.llamarReporte;
+import Modelo.Graficos;
+import javax.swing.*;
 
 /**
  *
@@ -49,6 +51,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jMenuItem_demografias_por_cliente = new javax.swing.JMenuItem();
         jMenu_Reporte = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu_Graficos = new javax.swing.JMenu();
+        jMenu_grafico = new javax.swing.JMenuItem();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -181,6 +185,18 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu_Reporte);
 
+        jMenu_Graficos.setText("Graficos");
+
+        jMenu_grafico.setText("Generar grafica en formato PNG sobre las ciudades");
+        jMenu_grafico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu_graficoActionPerformed(evt);
+            }
+        });
+        jMenu_Graficos.add(jMenu_grafico);
+
+        jMenuBar1.add(jMenu_Graficos);
+
         setJMenuBar(jMenuBar1);
 
         pack();
@@ -235,6 +251,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         llamado.mostrarReporte();
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
+    private void jMenu_graficoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu_graficoActionPerformed
+        Graficos gr=new Graficos();
+        if(gr.dibujar()){
+            JOptionPane.showMessageDialog(null,"Se genero el grafico y se guardo");
+        }else{
+            JOptionPane.showMessageDialog(null,"NO se genero el grafico y se guardo");
+        }
+    }//GEN-LAST:event_jMenu_graficoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -285,6 +310,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenu_Cambios_clientes_demograficos;
     private javax.swing.JMenuItem jMenu_Cliente_demo;
     private javax.swing.JMenu jMenu_Consultas;
+    private javax.swing.JMenu jMenu_Graficos;
     private javax.swing.JMenu jMenu_Reporte;
     private javax.swing.JMenuItem jMenu_altasClientes;
     private javax.swing.JMenuItem jMenu_cambios_clientes_demo;
@@ -292,6 +318,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenu_eliminar_cliente_demo;
     private javax.swing.JMenuItem jMenu_eliminar_clientes_demograficos;
     private javax.swing.JMenuItem jMenu_eliminarcliente;
+    private javax.swing.JMenuItem jMenu_grafico;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -23,11 +23,11 @@ public class JavaApplication10 {
     public static void main(String[] args) {
         //new Login().setVisible(true);
         Connection a = ConexionBD.getConexion();
-        //new PantallaPrincipal().setVisible(true);
+        new PantallaPrincipal().setVisible(true);
        // llamarReporte llamado=new llamarReporte();
         //llamado.mostrarReporte();
-        Graficos gr=new Graficos();
-        gr.dibujar();
+        //Graficos gr=new Graficos();
+        //gr.dibujar();
     }
     
 }
