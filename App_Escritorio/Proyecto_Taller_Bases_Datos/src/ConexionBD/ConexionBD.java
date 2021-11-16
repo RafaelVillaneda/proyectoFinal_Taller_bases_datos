@@ -89,7 +89,7 @@ public class ConexionBD {
 	}
         public static boolean ActualizarRegistroClienteDemo(Cliente_demo a,String cambio){
 		
-		 try {//Aqui esta el procedimientos almacenado
+		 try {//Aqui esta el procedimientos almacenado para mostrar en mysql: SHOW CREATE PROCEDURE sp_cambio_cliente_demo;
                     pstm = conexion.prepareStatement("CALL sp_cambio_cliente_demo(?,?,?)");
                         pstm.setString(1,a.getIdCliente());
                         pstm.setString(2,a.getIdDemo());

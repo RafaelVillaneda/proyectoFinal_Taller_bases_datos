@@ -5,6 +5,7 @@
  */
 package javaapplication10;
 import Vistas.Login;
+import Modelo.Graficos;
 import Vistas.PantallaPrincipal;
 import ConexionBD.ConexionBD;
 import java.sql.Connection;
@@ -22,9 +23,11 @@ public class JavaApplication10 {
     public static void main(String[] args) {
         //new Login().setVisible(true);
         Connection a = ConexionBD.getConexion();
-        new PantallaPrincipal().setVisible(true);
+        //new PantallaPrincipal().setVisible(true);
        // llamarReporte llamado=new llamarReporte();
         //llamado.mostrarReporte();
+        Graficos gr=new Graficos();
+        gr.dibujar();
     }
     
 }
