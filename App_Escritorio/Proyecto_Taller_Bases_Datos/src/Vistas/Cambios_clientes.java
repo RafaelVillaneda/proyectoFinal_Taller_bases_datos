@@ -179,6 +179,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
+
+        caja_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_idKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 1;
@@ -631,6 +637,13 @@ public class Cambios_clientes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"No existe un cliente con ese indentificador");
         }
     }//GEN-LAST:event_btn_buscarActionPerformed
+
+    private void caja_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyTyped
+       char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_idKeyTyped
 
     /**
      * @param args the command line arguments

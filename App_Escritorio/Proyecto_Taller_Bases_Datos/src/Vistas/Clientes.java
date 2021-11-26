@@ -106,6 +106,15 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 23, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
+
+        caja_Nombre_compañia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_Nombre_compañia1KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Nombre_compañia1KeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 3;
@@ -172,6 +181,15 @@ public class Clientes extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(31, 21, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
+
+        caja_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                caja_idKeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_idKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 1;
@@ -551,6 +569,28 @@ public class Clientes extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null,"Alguna o algunas cajas Obligatorias (indentificador y nombre de la compañia) estan vacias");
         }
     }//GEN-LAST:event_btn_AgregarActionPerformed
+
+    private void caja_idKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyReleased
+       
+    }//GEN-LAST:event_caja_idKeyReleased
+
+    private void caja_Nombre_compañia1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Nombre_compañia1KeyReleased
+        
+    }//GEN-LAST:event_caja_Nombre_compañia1KeyReleased
+
+    private void caja_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_idKeyTyped
+
+    private void caja_Nombre_compañia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Nombre_compañia1KeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_Nombre_compañia1KeyTyped
     
     public boolean validar_cajas_vacias(){
         boolean lleno;

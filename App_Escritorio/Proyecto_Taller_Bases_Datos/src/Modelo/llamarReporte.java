@@ -18,8 +18,7 @@ import net.sf.jasperreports.view.JasperViewer;
  */
 public class llamarReporte {
 
-    public llamarReporte() {
-    }
+    public llamarReporte() {}
     
     public void mostrarReporte(){
         
@@ -29,7 +28,6 @@ public class llamarReporte {
             JasperPrint print=JasperFillManager.fillReport(jaspe, null,ConexionBD.getConexion());
             JasperViewer view= new JasperViewer(print,false);
             view.setVisible(true);
-            
         } catch (Exception e) {
             System.err.println("Error al generar el reporte---->"+e.getMessage());
         }

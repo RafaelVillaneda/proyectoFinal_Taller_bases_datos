@@ -129,6 +129,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 caja_Nombre_compañia1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Nombre_compañia1KeyTyped(evt);
+            }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
@@ -694,6 +697,13 @@ public class Consultas_clientes extends javax.swing.JFrame {
         String consulta="SELECT * FROM customers WHERE Fax LIKE '"+agregado+"%'";
         actualizarTabla(consulta);
     }//GEN-LAST:event_caja_faxKeyReleased
+
+    private void caja_Nombre_compañia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Nombre_compañia1KeyTyped
+       char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+	evt.consume();
+        }
+    }//GEN-LAST:event_caja_Nombre_compañia1KeyTyped
 
     /**
      * @param args the command line arguments
