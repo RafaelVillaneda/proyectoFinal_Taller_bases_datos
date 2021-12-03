@@ -147,7 +147,7 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         Cliente_demo_DAO DAO=new Cliente_demo_DAO();
         Cliente_demo obj=new Cliente_demo(caja_Id_Cliente.getText(),caja_Id_demografia.getText());
-        if(DAO.borrarRegistro(obj)){
+        if(DAO.borrarRegistro(obj) && DAO.buscar(caja_Id_Cliente.getText(),caja_Id_demografia.getText())!=null){
             JOptionPane.showMessageDialog(null,"Registro Eliminado correctamente");
         }else{
             JOptionPane.showMessageDialog(null,"El registro no pudo ser eliminado");

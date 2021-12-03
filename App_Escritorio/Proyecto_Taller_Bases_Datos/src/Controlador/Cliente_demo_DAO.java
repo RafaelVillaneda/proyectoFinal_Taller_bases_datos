@@ -6,7 +6,10 @@
 package Controlador;
 
 import ConexionBD.ConexionBD;
+import Modelo.Cliente;
 import Modelo.Cliente_demo;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 /**
  *
@@ -30,6 +33,25 @@ public class Cliente_demo_DAO {
         String sql="DELETE FROM customercustomerdemo WHERE CustomerID='"+c.getIdCliente()+"' AND CustomerTypeID='"+c.getIdDemo()+"';";
 	resultado = ConexionBD.EliminarRegistro(sql);
 	return resultado;
+    }
+    public Cliente_demo buscar(String filtro,String filtro2){
+        
+    Cliente_demo cli=new Cliente_demo();
+		String sql="SELECT * FROM customercustomerdemo WHERE CustomerID ='"+filtro+"' AND  CustomerTypeID='"+filtro2+"';";
+		
+		ResultSet rs=ConexionBD.ConsultarRegistro(sql);
+		
+		try {
+			if(rs.next()) {
+                            cli.setIdCliente(rs.getString(1));
+                            cli.setIdDemo(rs.getString(2));
+			}else {
+				return null;
+			}
+		} catch (SQLException e) {
+                        System.err.println("No encontro nada");
+		}
+		return cli;
     }
     
 }

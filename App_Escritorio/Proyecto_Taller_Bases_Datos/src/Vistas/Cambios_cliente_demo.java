@@ -226,7 +226,7 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
             cli.setIdCliente(caja_Id_Cliente.getText());
             cli.setIdDemo(caja_Id_demografia.getText());
             //System.out.println(cli);
-            if(DAO.actualizar(cli,caja_id_cambio.getText())){
+            if(DAO.actualizar(cli,caja_id_cambio.getText())&& DAO.buscar(caja_Id_Cliente.getText(),caja_id_cambio.getText())!=null){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado correctamente");
                 actualizarTabla("SELECT * FROM customercustomerdemo;");
             }else{
