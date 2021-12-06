@@ -13,10 +13,11 @@ import javax.swing.*;
  * @author Rafael Villaneda
  */
 public class Bajas_demografias extends javax.swing.JFrame {
-
+int fila=-1;
     /** Creates new form Bajas_demografias */
     public Bajas_demografias() {
         initComponents();
+        actualizarTabla("SELECT * FROM customerdemographics ");
     }
 
     /** This method is called from within the constructor to
@@ -37,6 +38,8 @@ public class Bajas_demografias extends javax.swing.JFrame {
         btn_Agregar = new javax.swing.JButton();
         btn_borrar = new javax.swing.JButton();
         btn_Salir = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -49,7 +52,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.ipady = -6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 31, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(29, 9, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setText("Indentificador de la demografia: ");
@@ -58,7 +61,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 2, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(65, 2, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setText("Descripcion de la demografia: ");
@@ -67,10 +70,14 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(14, 31, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(14, 9, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
 
-        caja_id_desc.setEnabled(false);
+        caja_id_desc.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_id_descKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 3;
@@ -79,8 +86,14 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 306;
         gridBagConstraints.ipady = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 31);
+        gridBagConstraints.insets = new java.awt.Insets(6, 4, 0, 0);
         getContentPane().add(caja_id_desc, gridBagConstraints);
+
+        caja_id_demografia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_id_demografia1KeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
@@ -88,7 +101,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 106;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(33, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(62, 18, 0, 0);
         getContentPane().add(caja_id_demografia1, gridBagConstraints);
 
         btn_Agregar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
@@ -101,11 +114,10 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(71, 31, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(71, 9, 30, 0);
         getContentPane().add(btn_Agregar, gridBagConstraints);
 
         btn_borrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
-        btn_borrar.setEnabled(false);
         btn_borrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_borrarActionPerformed(evt);
@@ -117,7 +129,7 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 15;
         gridBagConstraints.ipady = 16;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(71, 4, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(71, 4, 30, 0);
         getContentPane().add(btn_borrar, gridBagConstraints);
 
         btn_Salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -131,8 +143,39 @@ public class Bajas_demografias extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(71, 53, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(71, 53, 30, 0);
         getContentPane().add(btn_Salir, gridBagConstraints);
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabla);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 469;
+        gridBagConstraints.ipady = 275;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(29, 30, 30, 30);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -143,9 +186,12 @@ public class Bajas_demografias extends javax.swing.JFrame {
         obj.setId(caja_id_demografia1.getText());
         if(DAO.borrarRegistro(obj)){
             JOptionPane.showMessageDialog(null,"Demografia eliminada");
-            btn_borrar.setEnabled(false);
+            actualizarTabla("SELECT * FROM customerdemographics ");
+            caja_id_demografia1.setText("");
+               caja_id_desc.setText("");
         }else{
             JOptionPane.showMessageDialog(null,"Error la demografia no se pudo eliminar");
+            actualizarTabla("SELECT * FROM customerdemographics ");
         }
     }//GEN-LAST:event_btn_borrarActionPerformed
 
@@ -154,18 +200,48 @@ public class Bajas_demografias extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_SalirActionPerformed
 
     private void btn_AgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_AgregarActionPerformed
-        Demografia_cliente obj=new Demografia_cliente();
-        Demografia_cliente_DAO DAO= new Demografia_cliente_DAO();
-        obj=DAO.buscar(caja_id_demografia1.getText());
-        if(obj!=null){
-        caja_id_demografia1.setText(obj.getId());
-        caja_id_desc.setText(obj.getDesc());
-        btn_borrar.setEnabled(true);
-        }else{
-            JOptionPane.showMessageDialog(null,"No existe una demografia con ese indentificador");
-        }
+         actualizarTabla("SELECT * FROM customerdemographics ");
     }//GEN-LAST:event_btn_AgregarActionPerformed
 
+    private void caja_id_demografia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_demografia1KeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_id_demografia1.getText();
+        actualizarTabla("SELECT * FROM customerdemographics WHERE CustomerTypeID LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_id_demografia1KeyTyped
+
+    private void caja_id_descKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_id_descKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_id_desc.getText();
+        actualizarTabla("SELECT * FROM customerdemographics WHERE CustomerDesc LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_id_descKeyTyped
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        fila = tabla.getSelectedRow();
+        caja_id_demografia1.setText(tabla.getModel().getValueAt(fila,0).toString());
+        caja_id_desc.setText(tabla.getModel().getValueAt(fila,1).toString());
+    }//GEN-LAST:event_tablaMouseClicked
+
+    public void actualizarTabla(String consulta) {
+
+	String url="jdbc:mysql://localhost:3306/northwind";
+	String controlador="com.mysql.cj.jdbc.Driver";
+	ResultSetTableModel modeloDatos=null;
+	try {
+	modeloDatos=new ResultSetTableModel(controlador, url,consulta);
+	}catch (ClassNotFoundException e) {
+	e.printStackTrace();
+	}catch (Exception e) {
+	e.printStackTrace();
+	}
+	tabla.setModel(modeloDatos);
+	}
+    
     /**
      * @param args the command line arguments
      */
@@ -210,6 +286,8 @@ public class Bajas_demografias extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
 }

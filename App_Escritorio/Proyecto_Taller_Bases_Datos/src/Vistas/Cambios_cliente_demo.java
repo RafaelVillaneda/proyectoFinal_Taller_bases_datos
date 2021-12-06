@@ -16,10 +16,11 @@ import java.sql.SQLException;
  * @author Rafael Villaneda
  */
 public class Cambios_cliente_demo extends javax.swing.JFrame {
-
+    int fila=-1;
     /** Creates new form Cambios_cliente_demo */
     public Cambios_cliente_demo() {
         initComponents();
+        actualizarTabla("SELECT * FROM customercustomerdemo;");
     }
 
     /** This method is called from within the constructor to
@@ -78,6 +79,12 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(35, 0, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
+
+        caja_Id_Cliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Id_ClienteKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 1;
@@ -91,6 +98,11 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         caja_Id_demografia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_Id_demografiaActionPerformed(evt);
+            }
+        });
+        caja_Id_demografia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Id_demografiaKeyTyped(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -115,7 +127,7 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.ipady = -7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(70, 26, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(70, 26, 11, 0);
         getContentPane().add(btn_limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -130,7 +142,7 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 22;
         gridBagConstraints.ipady = -7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(70, 34, 0, 41);
+        gridBagConstraints.insets = new java.awt.Insets(70, 34, 11, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
         btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Rescribir.png"))); // NOI18N
@@ -144,7 +156,7 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.ipady = -7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(70, 18, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(70, 18, 11, 0);
         getContentPane().add(btn_rescribir, gridBagConstraints);
 
         tabla.setBackground(new java.awt.Color(153, 153, 255));
@@ -159,19 +171,24 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.gridwidth = 38;
+        gridBagConstraints.gridx = 38;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 8;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 337;
-        gridBagConstraints.ipady = 75;
+        gridBagConstraints.ipadx = 493;
+        gridBagConstraints.ipady = 338;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(50, 28, 117, 41);
+        gridBagConstraints.insets = new java.awt.Insets(19, 6, 11, 92);
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 11)); // NOI18N
@@ -228,9 +245,15 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
             //System.out.println(cli);
             if(DAO.actualizar(cli,caja_id_cambio.getText())&& DAO.buscar(caja_Id_Cliente.getText(),caja_id_cambio.getText())!=null){
                 JOptionPane.showMessageDialog(null,"Registro Actualizado correctamente");
+                caja_Id_Cliente.setText("");
+                caja_Id_demografia.setText("");
+                caja_id_cambio.setText("");
                 actualizarTabla("SELECT * FROM customercustomerdemo;");
             }else{
                 JOptionPane.showMessageDialog(null,"El rgistro No se pudo actualizar correctamente");
+                caja_Id_Cliente.setText("");
+                caja_Id_demografia.setText("");
+                caja_id_cambio.setText("");
                 actualizarTabla("SELECT * FROM customercustomerdemo;");
             }
         }
@@ -240,6 +263,30 @@ public class Cambios_cliente_demo extends javax.swing.JFrame {
     private void caja_id_cambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_id_cambioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_caja_id_cambioActionPerformed
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        fila = tabla.getSelectedRow();
+        caja_Id_Cliente.setText(tabla.getModel().getValueAt(fila,0).toString());
+        caja_Id_demografia.setText(tabla.getModel().getValueAt(fila,1).toString());
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void caja_Id_ClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Id_ClienteKeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_Id_Cliente.getText();
+        actualizarTabla("SELECT * FROM customercustomerdemo WHERE CustomerID LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_Id_ClienteKeyTyped
+
+    private void caja_Id_demografiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Id_demografiaKeyTyped
+        char car = evt.getKeyChar();
+        if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_Id_demografia.getText();
+        actualizarTabla("SELECT * FROM customercustomerdemo WHERE CustomerTypeID LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_Id_demografiaKeyTyped
     public void actualizarTabla(String consulta) {
 
 	String url="jdbc:mysql://localhost:3306/northwind";

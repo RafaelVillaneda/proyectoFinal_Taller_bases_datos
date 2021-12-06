@@ -13,10 +13,11 @@ import javax.swing.*;
  * @author Rafael Villaneda
  */
 public class Bajas_clientes_demo extends javax.swing.JFrame {
-
+int fila=-1;
     /** Creates new form Bajas_clientes_demo */
     public Bajas_clientes_demo() {
         initComponents();
+        actualizarTabla("SELECT * FROM customercustomerdemo");
     }
 
     /** This method is called from within the constructor to
@@ -32,11 +33,13 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        caja_Id_Cliente = new javax.swing.JTextField();
+        caja_id = new javax.swing.JTextField();
         caja_Id_demografia = new javax.swing.JTextField();
         btn_limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
         btn_eliminar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -49,6 +52,7 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.ipady = -30;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(20, 3, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 11)); // NOI18N
@@ -58,7 +62,7 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(59, 6, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(79, 6, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Yu Gothic UI Semilight", 0, 11)); // NOI18N
@@ -68,8 +72,17 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 13, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
+
+        caja_id.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                caja_idKeyPressed(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_idKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 0;
@@ -77,8 +90,14 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 112;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(57, 10, 0, 10);
-        getContentPane().add(caja_Id_Cliente, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(77, 10, 0, 0);
+        getContentPane().add(caja_id, gridBagConstraints);
+
+        caja_Id_demografia.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Id_demografiaKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 3;
@@ -100,7 +119,7 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 24, 11, 0);
+        gridBagConstraints.insets = new java.awt.Insets(40, 24, 0, 0);
         getContentPane().add(btn_limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -114,7 +133,7 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 12, 11, 0);
+        gridBagConstraints.insets = new java.awt.Insets(40, 12, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
         btn_eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
@@ -129,15 +148,47 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
         gridBagConstraints.ipadx = 12;
         gridBagConstraints.ipady = 16;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(40, 25, 11, 0);
+        gridBagConstraints.insets = new java.awt.Insets(40, 28, 0, 0);
         getContentPane().add(btn_eliminar, gridBagConstraints);
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabla);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 22;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 392;
+        gridBagConstraints.ipady = 400;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(0, 32, 0, 10);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_limpiarActionPerformed
-        caja_Id_Cliente.setText("");
+        caja_id.setText("");
         caja_Id_demografia.setText("");
+        actualizarTabla("SELECT * FROM customercustomerdemo");
     }//GEN-LAST:event_btn_limpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -146,14 +197,61 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
 
     private void btn_eliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminarActionPerformed
         Cliente_demo_DAO DAO=new Cliente_demo_DAO();
-        Cliente_demo obj=new Cliente_demo(caja_Id_Cliente.getText(),caja_Id_demografia.getText());
-        if(DAO.borrarRegistro(obj) && DAO.buscar(caja_Id_Cliente.getText(),caja_Id_demografia.getText())!=null){
+        Cliente_demo obj=new Cliente_demo(caja_id.getText(),caja_Id_demografia.getText());
+        if(DAO.borrarRegistro(obj)){
             JOptionPane.showMessageDialog(null,"Registro Eliminado correctamente");
+            actualizarTabla("SELECT * FROM customercustomerdemo");
+            
         }else{
             JOptionPane.showMessageDialog(null,"El registro no pudo ser eliminado");
+            actualizarTabla("SELECT * FROM customercustomerdemo");
         }
     }//GEN-LAST:event_btn_eliminarActionPerformed
 
+    private void caja_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyTyped
+        char car = evt.getKeyChar();
+        if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_id.getText();
+        actualizarTabla("SELECT * FROM customercustomerdemo WHERE CustomerID LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_idKeyTyped
+
+    private void caja_Id_demografiaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Id_demografiaKeyTyped
+        char car = evt.getKeyChar();
+        if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_Id_demografia.getText();
+        actualizarTabla("SELECT * FROM customercustomerdemo WHERE CustomerTypeID LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_Id_demografiaKeyTyped
+
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        fila = tabla.getSelectedRow();
+        caja_id.setText(tabla.getModel().getValueAt(fila,0).toString());
+        caja_Id_demografia.setText(tabla.getModel().getValueAt(fila,1).toString());
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void caja_idKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyPressed
+        
+    }//GEN-LAST:event_caja_idKeyPressed
+
+    public void actualizarTabla(String consulta) {
+
+	String url="jdbc:mysql://localhost:3306/northwind";
+	String controlador="com.mysql.cj.jdbc.Driver";
+	ResultSetTableModel modeloDatos=null;
+	try {
+	modeloDatos=new ResultSetTableModel(controlador, url,consulta);
+	}catch (ClassNotFoundException e) {
+	e.printStackTrace();
+	}catch (Exception e) {
+	e.printStackTrace();
+	}
+	tabla.setModel(modeloDatos);
+	}
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -193,11 +291,13 @@ public class Bajas_clientes_demo extends javax.swing.JFrame {
     private javax.swing.JButton btn_eliminar;
     private javax.swing.JButton btn_limpiar;
     private javax.swing.JButton btn_salir;
-    private javax.swing.JTextField caja_Id_Cliente;
     private javax.swing.JTextField caja_Id_demografia;
+    private javax.swing.JTextField caja_id;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
 }

@@ -15,10 +15,11 @@ import javax.swing.*;
  * @author Rafael Villaneda
  */
 public class Cambios_clientes extends javax.swing.JFrame {
-
+    int fila=-1;
     /** Creates new form Cambios_clientes */
     public Cambios_clientes() {
         initComponents();
+        actualizarTabla("SELECT * FROM customers");
     }
 
     /** This method is called from within the constructor to
@@ -58,6 +59,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         btn_Limpiar = new javax.swing.JButton();
         btn_salir = new javax.swing.JButton();
         btn_buscar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cambios Clientes");
@@ -69,7 +72,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 24, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -79,10 +82,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 3;
         gridBagConstraints.gridwidth = 12;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(19, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(19, 24, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
 
-        caja_nombre_contacto.setEnabled(false);
         caja_nombre_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_nombre_contactoKeyTyped(evt);
@@ -106,10 +108,14 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 5;
         gridBagConstraints.gridwidth = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
 
-        caja_Nombre_compañia1.setEnabled(false);
+        caja_Nombre_compañia1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_Nombre_compañia1KeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 3;
@@ -121,7 +127,11 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(14, 28, 0, 0);
         getContentPane().add(caja_Nombre_compañia1, gridBagConstraints);
 
-        caja_titulo_contacto.setEnabled(false);
+        caja_titulo_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                caja_titulo_contactoKeyTyped(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 7;
@@ -140,7 +150,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 7;
         gridBagConstraints.gridwidth = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(32, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(32, 26, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -150,10 +160,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 10;
         gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(18, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(18, 26, 0, 0);
         getContentPane().add(jLabel5, gridBagConstraints);
 
-        caja_direccion.setEnabled(false);
         caja_direccion.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
                 caja_direccionKeyTyped(evt);
@@ -177,7 +186,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 24, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
 
         caja_id.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -203,10 +212,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 12;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
         getContentPane().add(jLabel7, gridBagConstraints);
 
-        caja_ciudad.setEnabled(false);
         caja_ciudad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_ciudadActionPerformed(evt);
@@ -235,10 +243,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 14;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 26, 0, 0);
         getContentPane().add(jLabel8, gridBagConstraints);
 
-        caja_region.setEnabled(false);
         caja_region.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_regionActionPerformed(evt);
@@ -267,10 +274,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 17;
         gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(16, 12, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
 
-        caja_codigo_postal.setEnabled(false);
         caja_codigo_postal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_codigo_postalActionPerformed(evt);
@@ -292,7 +298,6 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
         getContentPane().add(caja_codigo_postal, gridBagConstraints);
 
-        caja_pais.setEnabled(false);
         caja_pais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_paisActionPerformed(evt);
@@ -320,10 +325,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 19;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 24, 0, 0);
         getContentPane().add(jLabel10, gridBagConstraints);
 
-        caja_telefono.setEnabled(false);
         caja_telefono.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_telefonoActionPerformed(evt);
@@ -350,10 +354,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridy = 21;
         gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(23, 11, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(23, 25, 0, 0);
         getContentPane().add(jLabel11, gridBagConstraints);
 
-        caja_fax.setEnabled(false);
         caja_fax.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 caja_faxActionPerformed(evt);
@@ -379,7 +382,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 23;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 11, 79, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 25, 79, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
@@ -438,8 +441,39 @@ public class Cambios_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.gridheight = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(9, 18, 0, 86);
+        gridBagConstraints.insets = new java.awt.Insets(9, 18, 0, 0);
         getContentPane().add(btn_buscar, gridBagConstraints);
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        tabla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(tabla);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 18;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridheight = 23;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 537;
+        gridBagConstraints.ipady = 493;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(9, 18, 79, 56);
+        getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -449,6 +483,9 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
             evt.consume();
         }
+        String agregado=caja_nombre_contacto.getText();
+        actualizarTabla("SELECT * FROM customers WHERE ContactName LIKE '%"+agregado+"%'");
+        
     }//GEN-LAST:event_caja_nombre_contactoKeyTyped
 
     private void caja_direccionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_direccionKeyTyped
@@ -456,6 +493,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isLetter(car) || Character.isSpaceChar(car) || Character.isDigit(car)){}else{
             evt.consume();
         }
+        String agregado=caja_direccion.getText();
+        actualizarTabla("SELECT * FROM customers WHERE Address LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_direccionKeyTyped
 
     private void caja_ciudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_ciudadActionPerformed
@@ -467,6 +506,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isLetter(car) || Character.isSpaceChar(car) || car=='.'){}else{
             evt.consume();
         }
+        String agregado=caja_ciudad.getText();
+        actualizarTabla("SELECT * FROM customers WHERE City LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_ciudadKeyTyped
 
     private void caja_regionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_regionActionPerformed
@@ -475,9 +516,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
 
     private void caja_regionKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_regionKeyTyped
         char car = evt.getKeyChar();
-        if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+        if(Character.isLetter(car) || Character.isSpaceChar(car) || car=='.'){}else{
             evt.consume();
         }
+        String agregado=caja_region.getText();
+        actualizarTabla("SELECT * FROM customers WHERE region LIKE '%"+agregado+"%'");
+        
     }//GEN-LAST:event_caja_regionKeyTyped
 
     private void caja_codigo_postalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_codigo_postalActionPerformed
@@ -486,9 +530,11 @@ public class Cambios_clientes extends javax.swing.JFrame {
 
     private void caja_codigo_postalKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_codigo_postalKeyTyped
         char car = evt.getKeyChar();
-        if(Character.isLetter(car) || Character.isSpaceChar(car) || Character.isDigit(car)){}else{
+        if(Character.isLetter(car) || Character.isSpaceChar(car) ||Character.isDigit(car) ){}else{
             evt.consume();
         }
+        String agregado=caja_codigo_postal.getText();
+        actualizarTabla("SELECT * FROM customers WHERE PostalCode LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_codigo_postalKeyTyped
 
     private void caja_paisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_paisActionPerformed
@@ -500,6 +546,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
             evt.consume();
         }
+        String agregado=caja_pais.getText();
+        actualizarTabla("SELECT * FROM customers WHERE Country LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_paisKeyTyped
 
     private void caja_telefonoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_telefonoActionPerformed
@@ -511,6 +559,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isDigit(car) || car=='-' || car=='(' || car==')'){}else{
             evt.consume();
         }
+        String agregado=caja_telefono.getText();
+        actualizarTabla("SELECT * FROM customers WHERE Phone LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_telefonoKeyTyped
 
     private void caja_faxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_caja_faxActionPerformed
@@ -522,6 +572,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         if(Character.isDigit(car) || car=='-' || car=='(' || car==')'){}else{
             evt.consume();
         }
+        String agregado=caja_fax.getText();
+        actualizarTabla("SELECT * FROM customers WHERE fax LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_faxKeyTyped
 
     private void btn_LimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_LimpiarActionPerformed
@@ -537,18 +589,6 @@ public class Cambios_clientes extends javax.swing.JFrame {
         caja_pais.setText("");
         caja_telefono.setText("");
         caja_fax.setText("");
-        
-        caja_id.setEnabled(true);
-        caja_Nombre_compañia1.setEnabled(false);
-        caja_nombre_contacto.setEnabled(false);
-        caja_titulo_contacto.setEnabled(false);
-        caja_direccion.setEnabled(false);
-        caja_ciudad.setEnabled(false);
-        caja_region.setEnabled(false);
-        caja_codigo_postal.setEnabled(false);
-        caja_pais.setEnabled(false);
-        caja_telefono.setEnabled(false);
-        caja_fax.setEnabled(false);
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -570,7 +610,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         cli.setTelefono(caja_telefono.getText());
         cli.setFax(caja_fax.getText());
         System.out.println(cli);
-        if(DAO.modificarRegistro(cli)){
+        if(DAO.modificarRegistro(cli) && caja_id.getText().toString().isEmpty()==false){
             JOptionPane.showMessageDialog(null,"Registro Actualizado correctamente");
             //----------------------------------------
         caja_id.setText("");
@@ -585,23 +625,15 @@ public class Cambios_clientes extends javax.swing.JFrame {
         caja_telefono.setText("");
         caja_fax.setText("");
         //-----------------------------------
-        caja_id.setEnabled(true);
-        caja_Nombre_compañia1.setEnabled(false);
-        caja_nombre_contacto.setEnabled(false);
-        caja_titulo_contacto.setEnabled(false);
-        caja_direccion.setEnabled(false);
-        caja_ciudad.setEnabled(false);
-        caja_region.setEnabled(false);
-        caja_codigo_postal.setEnabled(false);
-        caja_pais.setEnabled(false);
-        caja_telefono.setEnabled(false);
-        caja_fax.setEnabled(false);
+        
         }else{
             JOptionPane.showMessageDialog(null,"Error el registro NO se actualizo");
         }  
     }//GEN-LAST:event_btn_rescribirActionPerformed
 
     private void btn_buscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buscarActionPerformed
+        actualizarTabla("SELECT * FROM customers");
+        /*
         Cliente cli=new Cliente();
         Cliente_DAO DAO=new Cliente_DAO();
         
@@ -636,15 +668,123 @@ public class Cambios_clientes extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(null,"No existe un cliente con ese indentificador");
         }
+        */
     }//GEN-LAST:event_btn_buscarActionPerformed
 
     private void caja_idKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_idKeyTyped
-       char car = evt.getKeyChar();
+        char car = evt.getKeyChar();
 	if(Character.isLetter(car) || Character.isDigit(car)){}else{
 	evt.consume();
         }
+        String agregado=caja_id.getText();
+        actualizarTabla("SELECT * FROM customers WHERE CustomerID LIKE '%"+agregado+"%'");
     }//GEN-LAST:event_caja_idKeyTyped
 
+    private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
+        fila = tabla.getSelectedRow();
+        Object address;
+        Object city;
+        Object region;
+        Object postalCode;
+        Object country;
+        Object phone;
+        Object fax;
+        
+        caja_id.setText(tabla.getModel().getValueAt(fila,0).toString());
+        caja_Nombre_compañia1.setText(tabla.getModel().getValueAt(fila,1).toString());
+        caja_nombre_contacto.setText(tabla.getModel().getValueAt(fila,2).toString());
+        caja_titulo_contacto.setText(tabla.getModel().getValueAt(fila,3).toString());
+        
+        address = tabla.getModel().getValueAt(fila, 4);
+        city = tabla.getModel().getValueAt(fila, 5);
+        region = tabla.getModel().getValueAt(fila, 6);
+        postalCode = tabla.getModel().getValueAt(fila, 7);
+        country = tabla.getModel().getValueAt(fila, 8);
+        phone = tabla.getModel().getValueAt(fila, 9);
+        fax = tabla.getModel().getValueAt(fila, 10);
+        
+        if(city==null){
+            address="";
+        }else{
+            address=address.toString();
+        }
+        
+        if(city==null){
+            city="";
+        }else{
+            city=city.toString();
+        }
+        
+        if(region==null){
+            region="";
+        }else{
+            region=region.toString();
+        }
+        
+        if(postalCode==null){
+            postalCode="";
+        }else{
+            postalCode=postalCode.toString();
+        }
+        
+        if(country==null){
+            country="";
+        }else{
+            country=country.toString();
+        }
+        
+        if(phone==null){
+            phone="";
+        }else{
+            phone=phone.toString();
+        }
+        
+        if(fax==null){
+            fax="";
+        }else{
+            fax=fax.toString();
+        }
+        
+        caja_direccion.setText((String)address);
+        caja_ciudad.setText((String)city);
+        caja_region.setText((String)region);
+        caja_codigo_postal.setText((String)postalCode);
+        caja_pais.setText((String)country);
+        caja_telefono.setText((String)phone);
+        caja_fax.setText((String)fax);
+    }//GEN-LAST:event_tablaMouseClicked
+
+    private void caja_Nombre_compañia1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_Nombre_compañia1KeyTyped
+        char car = evt.getKeyChar();
+	if(Character.isLetter(car) || Character.isDigit(car)){}else{
+	evt.consume();
+        }
+        String agregado=caja_Nombre_compañia1.getText();
+        actualizarTabla("SELECT * FROM customers WHERE CompanyName LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_Nombre_compañia1KeyTyped
+
+    private void caja_titulo_contactoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_caja_titulo_contactoKeyTyped
+        char car = evt.getKeyChar();
+        if(Character.isLetter(car) || Character.isSpaceChar(car)){}else{
+            evt.consume();
+        }
+        String agregado=caja_titulo_contacto.getText();
+        actualizarTabla("SELECT * FROM customers WHERE ContactTitle LIKE '%"+agregado+"%'");
+    }//GEN-LAST:event_caja_titulo_contactoKeyTyped
+        public void actualizarTabla(String consulta) {
+
+	String url="jdbc:mysql://localhost:3306/northwind";
+	String controlador="com.mysql.cj.jdbc.Driver";
+	ResultSetTableModel modeloDatos=null;
+	try {
+	modeloDatos=new ResultSetTableModel(controlador, url,consulta);
+	}catch (ClassNotFoundException e) {
+	e.printStackTrace();
+	}catch (Exception e) {
+	e.printStackTrace();
+	}
+	tabla.setModel(modeloDatos);
+	}
     /**
      * @param args the command line arguments
      */
@@ -708,6 +848,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 
 }
