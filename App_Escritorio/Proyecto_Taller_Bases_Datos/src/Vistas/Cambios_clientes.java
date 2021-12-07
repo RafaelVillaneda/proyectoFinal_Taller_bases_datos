@@ -61,6 +61,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         btn_buscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabla = new javax.swing.JTable();
+        jLabel13 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cambios Clientes");
@@ -68,19 +69,18 @@ public class Cambios_clientes extends javax.swing.JFrame {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Modificar_Usuario.png"))); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 24, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 548, 0, 0);
         getContentPane().add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel2.setText("Nombre de la compañia:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.gridwidth = 12;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridwidth = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(19, 24, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
@@ -91,8 +91,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -105,8 +105,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel3.setText("Nombre de contacto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 5;
-        gridBagConstraints.gridwidth = 11;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
@@ -117,8 +117,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 3;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 4;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -133,8 +133,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 7;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -147,8 +147,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel4.setText("Titulo de contacto:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(32, 26, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
@@ -157,8 +157,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel5.setText("Dirección: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 10;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridy = 11;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(18, 26, 0, 0);
         getContentPane().add(jLabel5, gridBagConstraints);
@@ -169,8 +169,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 11;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -183,10 +183,10 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel6.setText("Indentificador");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 24, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(1, 24, 0, 0);
         getContentPane().add(jLabel6, gridBagConstraints);
 
         caja_id.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -195,10 +195,10 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
+        gridBagConstraints.gridx = 11;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.gridwidth = 2;
-        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.gridheight = 3;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -209,7 +209,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel7.setText("Ciudad: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridy = 13;
         gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
@@ -226,8 +226,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 12;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 13;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -240,7 +240,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel8.setText("Region: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridy = 15;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 26, 0, 0);
@@ -257,8 +257,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 14;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 15;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -271,8 +271,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel9.setText("Codigo postal: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 17;
-        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.gridy = 18;
+        gridBagConstraints.gridwidth = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 26, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
@@ -288,8 +288,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 17;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 18;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
@@ -309,8 +309,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 19;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 20;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
@@ -322,7 +322,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel10.setText("Pais: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 19;
+        gridBagConstraints.gridy = 20;
         gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(23, 24, 0, 0);
@@ -339,8 +339,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 21;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 22;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
@@ -351,8 +351,8 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jLabel11.setText("Telefono: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 21;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridy = 22;
+        gridBagConstraints.gridwidth = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(23, 25, 0, 0);
         getContentPane().add(jLabel11, gridBagConstraints);
@@ -368,21 +368,23 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 12;
-        gridBagConstraints.gridy = 23;
+        gridBagConstraints.gridx = 11;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.gridheight = 25;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 79, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 26, 42, 0);
         getContentPane().add(caja_fax, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
         jLabel12.setText("Fax: ");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 23;
+        gridBagConstraints.gridy = 24;
+        gridBagConstraints.gridheight = 25;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 25, 79, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 25, 42, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_rescribir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar.png"))); // NOI18N
@@ -392,12 +394,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
-        gridBagConstraints.gridy = 7;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 8;
         gridBagConstraints.gridheight = 3;
+        gridBagConstraints.ipadx = 102;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(27, 10, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(27, 6, 0, 0);
         getContentPane().add(btn_rescribir, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
@@ -407,12 +409,12 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
-        gridBagConstraints.gridy = 12;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 13;
         gridBagConstraints.gridheight = 5;
+        gridBagConstraints.ipadx = 102;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(22, 8, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(22, 6, 0, 0);
         getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -422,24 +424,25 @@ public class Cambios_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
-        gridBagConstraints.gridy = 19;
+        gridBagConstraints.gridx = 13;
+        gridBagConstraints.gridy = 20;
         gridBagConstraints.gridheight = 4;
+        gridBagConstraints.ipadx = 102;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
-        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/icono_tabla.png"))); // NOI18N
+        btn_buscar.setText("Restablecer Tabla");
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridx = 13;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 4;
-        gridBagConstraints.gridheight = 4;
+        gridBagConstraints.gridheight = 5;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(9, 18, 0, 0);
         getContentPane().add(btn_buscar, gridBagConstraints);
@@ -463,17 +466,28 @@ public class Cambios_clientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 18;
+        gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 23;
+        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridheight = 24;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 537;
-        gridBagConstraints.ipady = 493;
+        gridBagConstraints.ipadx = 593;
+        gridBagConstraints.ipady = 482;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(9, 18, 79, 56);
+        gridBagConstraints.insets = new java.awt.Insets(9, 6, 0, 10);
         getContentPane().add(jScrollPane1, gridBagConstraints);
+
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Modificar_Usuario.png"))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridheight = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(10, 34, 0, 0);
+        getContentPane().add(jLabel13, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -520,7 +534,11 @@ public class Cambios_clientes extends javax.swing.JFrame {
             evt.consume();
         }
         String agregado=caja_region.getText();
+        if(caja_region.getText().toString().isEmpty()==false){
         actualizarTabla("SELECT * FROM customers WHERE region LIKE '%"+agregado+"%'");
+        }else{
+         actualizarTabla("SELECT * FROM customers");
+    }
         
     }//GEN-LAST:event_caja_regionKeyTyped
 
@@ -589,6 +607,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
         caja_pais.setText("");
         caja_telefono.setText("");
         caja_fax.setText("");
+        actualizarTabla("SELECT * FROM customers");
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -611,7 +630,11 @@ public class Cambios_clientes extends javax.swing.JFrame {
         cli.setFax(caja_fax.getText());
         System.out.println(cli);
         if(DAO.modificarRegistro(cli) && caja_id.getText().toString().isEmpty()==false){
+            if(DAO.buscar(caja_id.getText().toString())!=null){
             JOptionPane.showMessageDialog(null,"Registro Actualizado correctamente");
+            }else{
+                JOptionPane.showMessageDialog(null,"No existe ese registro");
+            }
             //----------------------------------------
         caja_id.setText("");
         caja_Nombre_compañia1.setText("");
@@ -840,6 +863,7 @@ public class Cambios_clientes extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;

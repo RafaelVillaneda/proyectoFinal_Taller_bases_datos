@@ -373,11 +373,10 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 27;
-        gridBagConstraints.gridheight = 28;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(6, 26, 4, 0);
+        gridBagConstraints.insets = new java.awt.Insets(6, 26, 0, 0);
         getContentPane().add(caja_fax, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -385,9 +384,8 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 27;
-        gridBagConstraints.gridheight = 28;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(20, 24, 4, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 24, 0, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
         btn_eliminar_registro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/borrar_registro.png"))); // NOI18N
@@ -399,9 +397,8 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 5;
-        gridBagConstraints.ipadx = 16;
+        gridBagConstraints.ipadx = 106;
         gridBagConstraints.ipady = 17;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(29, 8, 0, 0);
@@ -416,8 +413,8 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 16;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 5;
+        gridBagConstraints.ipadx = 90;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(22, 8, 0, 0);
         getContentPane().add(btn_Limpiar, gridBagConstraints);
@@ -432,11 +429,13 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 23;
         gridBagConstraints.gridheight = 4;
+        gridBagConstraints.ipadx = 92;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(21, 6, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
-        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Buscar_tablas.png"))); // NOI18N
+        btn_buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/icono_tabla.png"))); // NOI18N
+        btn_buscar.setText("Restablecer Tabla");
         btn_buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_buscarActionPerformed(evt);
@@ -445,7 +444,6 @@ public class Bajas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 11;
-        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.gridheight = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(27, 8, 0, 0);
@@ -479,16 +477,16 @@ public class Bajas_clientes extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 16;
+        gridBagConstraints.gridx = 15;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridheight = 27;
+        gridBagConstraints.gridheight = 28;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 549;
-        gridBagConstraints.ipady = 485;
+        gridBagConstraints.ipadx = 465;
+        gridBagConstraints.ipady = 555;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(6, 18, 0, 45);
+        gridBagConstraints.insets = new java.awt.Insets(6, 10, 0, 0);
         getContentPane().add(jScrollPane1, gridBagConstraints);
 
         pack();
@@ -589,6 +587,7 @@ public class Bajas_clientes extends javax.swing.JFrame {
         caja_pais.setText("");
         caja_telefono.setText("");
         caja_fax.setText("");
+         actualizarTabla("SELECT * FROM customers");
     }//GEN-LAST:event_btn_LimpiarActionPerformed
 
     private void btn_salirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_salirActionPerformed
@@ -624,6 +623,7 @@ public class Bajas_clientes extends javax.swing.JFrame {
 
     private void btn_eliminar_registroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_eliminar_registroActionPerformed
         if(!caja_id.getText().isEmpty()){
+            cli.setId(caja_id.getText().toString());
             
             Cliente_DAO DAO=new Cliente_DAO();
             boolean eliminado=DAO.borrarRegistro(cli);

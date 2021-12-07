@@ -103,7 +103,7 @@
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="jMenu_Cambios_clientes_demograficos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cambios clientes demograficos"/>
+                <Property name="text" type="java.lang.String" value="Cambios demografias"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenu_Cambios_clientes_demograficosActionPerformed"/>

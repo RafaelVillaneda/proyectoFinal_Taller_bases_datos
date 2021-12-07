@@ -143,7 +143,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         });
         jMenu_Cambios.add(jMenu_cambios_clientes_demo);
 
-        jMenu_Cambios_clientes_demograficos.setText("Cambios clientes demograficos");
+        jMenu_Cambios_clientes_demograficos.setText("Cambios demografias");
         jMenu_Cambios_clientes_demograficos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenu_Cambios_clientes_demograficosActionPerformed(evt);

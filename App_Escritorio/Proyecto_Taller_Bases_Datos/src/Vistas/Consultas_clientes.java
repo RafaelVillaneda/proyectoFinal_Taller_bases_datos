@@ -17,6 +17,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
     /** Creates new form Consultas_clientes */
     public Consultas_clientes() {
         initComponents();
+        actualizarTabla("SELECT * FROM customers");
     }
 
     /** This method is called from within the constructor to
@@ -81,7 +82,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 9;
+        gridBagConstraints.gridwidth = 8;
         gridBagConstraints.gridheight = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         getContentPane().add(jLabel1, gridBagConstraints);
@@ -91,7 +92,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 4;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 11, 0, 0);
         getContentPane().add(jLabel2, gridBagConstraints);
@@ -107,12 +108,12 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
         getContentPane().add(caja_nombre_contacto, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -120,7 +121,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 13, 0, 0);
         getContentPane().add(jLabel3, gridBagConstraints);
@@ -136,12 +137,12 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(11, 28, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(11, 10, 0, 0);
         getContentPane().add(caja_Nombre_compañia1, gridBagConstraints);
 
         caja_titulo_contacto.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -165,7 +166,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.gridwidth = 10;
+        gridBagConstraints.gridwidth = 9;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 10, 0, 0);
         getContentPane().add(jLabel4, gridBagConstraints);
@@ -219,12 +220,12 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 14;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 6;
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.ipadx = 150;
         gridBagConstraints.ipady = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(13, 28, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(13, 10, 0, 0);
         getContentPane().add(caja_id, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 14)); // NOI18N
@@ -300,7 +301,7 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(16, 0, 0, 0);
         getContentPane().add(jLabel9, gridBagConstraints);
@@ -428,7 +429,8 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(25, 1, 0, 0);
         getContentPane().add(jLabel12, gridBagConstraints);
 
-        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/all.png"))); // NOI18N
+        btn_Buscar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/icono_tabla.png"))); // NOI18N
+        btn_Buscar.setText("Restablecer Tabla");
         btn_Buscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_BuscarActionPerformed(evt);
@@ -437,9 +439,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 20;
-        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.gridwidth = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 1, 22, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 1, 0, 0);
         getContentPane().add(btn_Buscar, gridBagConstraints);
 
         btn_Limpiar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/Limpiar.png"))); // NOI18N
@@ -451,9 +453,9 @@ public class Consultas_clientes extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
         gridBagConstraints.gridy = 20;
-        gridBagConstraints.gridwidth = 2;
+        gridBagConstraints.gridwidth = 4;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 13, 22, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 96, 0, 0);
         getContentPane().add(btn_Limpiar, gridBagConstraints);
 
         btn_salir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Recursos_Visuales/salir.png"))); // NOI18N
@@ -463,11 +465,11 @@ public class Consultas_clientes extends javax.swing.JFrame {
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 14;
+        gridBagConstraints.gridx = 19;
         gridBagConstraints.gridy = 20;
-        gridBagConstraints.gridwidth = 6;
+        gridBagConstraints.gridwidth = 7;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(36, 1, 22, 0);
+        gridBagConstraints.insets = new java.awt.Insets(36, 65, 0, 0);
         getContentPane().add(btn_salir, gridBagConstraints);
 
         tabla.setModel(new javax.swing.table.DefaultTableModel(
@@ -484,16 +486,16 @@ public class Consultas_clientes extends javax.swing.JFrame {
         jScrollPane2.setViewportView(tabla);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 21;
+        gridBagConstraints.gridx = 26;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridheight = 21;
+        gridBagConstraints.gridheight = 22;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 663;
-        gridBagConstraints.ipady = 542;
+        gridBagConstraints.ipadx = 440;
+        gridBagConstraints.ipady = 732;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(0, 18, 22, 10);
+        gridBagConstraints.insets = new java.awt.Insets(13, 18, 11, 0);
         getContentPane().add(jScrollPane2, gridBagConstraints);
 
         pack();
